@@ -1,2 +1,5 @@
-# CSE-341-FinalProject
-Final Project for CSE 341
+# CSE 341 - Final Project
+An API for retrieving College data like student grades, course, etc
+
+## Collaborators
+- 
