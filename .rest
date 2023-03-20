@@ -1,0 +1,208 @@
+//**********************GET ALL************************ 
+
+//COURSES 
+
+### Render 
+
+GET https://personalassignment7.onrender.com/courses 
+
+### Local Host 
+
+GET http://localhost:3000/courses 
+
+
+
+//INSTRUCTORS 
+
+### Render 
+
+GET https://personalassignment7.onrender.com/instructors 
+
+### Local Host 
+
+GET http://localhost:3000/instructors 
+
+
+//**********************GET ONE************************ 
+
+//COURSE 
+
+### Render 
+
+GET https://personalassignment7.onrender.com/courses/6407997550ea6decbd5fe3e4 
+
+### Local Host 
+
+GET http://localhost:3000/courses/6407997550ea6decbd5fe3e4 
+
+//INSTRUCTOR 
+
+### Render 
+
+GET https://personalassignment7.onrender.com/instructors/6407998c50ea6decbd5fe3ef 
+
+### Local Host 
+
+GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3ef 
+
+//*******************POST*************************** 
+
+//COURSE 
+
+### Render 
+
+POST https://personalassignment7.onrender.com/courses 
+
+Content-Type: application/json 
+
+{ 
+    "courseTitle": "Under Water Basket Weaving", 
+    "courseId": "PYS-212", 
+    "instructor": "Lily Palmer", 
+    "classMax": 12, 
+    "currentEnrollment": 0, 
+    "startDate": "04/17/2023", 
+    "endDate": "7/24/2023" 
+} 
+
+ 
+
+### Local Host 
+
+POST http://localhost:3000/courses 
+
+Content-Type: application/json 
+
+{ 
+    "courseTitle": "Under Water Basket Weaving", 
+    "courseId": "PYS-212", 
+    "instructor": "Lily Palmer", 
+    "classMax": 12, 
+    "currentEnrollment": 0, 
+    "startDate": "04/17/2023", 
+    "endDate": "7/24/2023" 
+} 
+
+//INSTRUCTOR 
+
+### Render 
+
+POST https://personalassignment7.onrender.com/instructors 
+
+Content-Type: application/json 
+
+{ 
+    "firstName": "Lily", 
+    "lastName": "Palmer", 
+    "department": "Pys-Ed", 
+    "email": "lpalmer@test.com", 
+    "tenure": false, 
+    "course": "PYS-212" 
+} 
+
+### Local Host 
+
+POST http://localhost:3000/instructors 
+
+Content-Type: application/json 
+
+{ 
+    "firstName": "Lily", 
+    "lastName": "Palmer", 
+    "department": "Pys-Ed", 
+    "email": "lpalmer@test.com", 
+    "tenure": false, 
+    "course": "PYS-212" 
+} 
+
+//******************UPDATE/PUT**************************** 
+
+//COURSE 
+
+### Render 
+
+PUT https://personalassignment7.onrender.com/courses/640f9918e9181eb09413d6c7 
+
+Content-Type: application/json 
+
+{ 
+    "courseTitle": "Algebra", 
+    "courseId": "MATH-111", 
+    "instructor": "George Santos", 
+    "classMax": 50, 
+    "currentEnrollment": 37, 
+    "startDate": "04/17/2023", 
+    "endDate": "7/24/2023" 
+} 
+
+### Local Host 
+
+PUT http://localhost:3000/courses/6407997550ea6decbd5fe3e4 
+
+Content-Type: application/json 
+
+{ 
+    "courseTitle": "Algebra", 
+    "courseId": "MATH-111", 
+    "instructor": "George Santos", 
+    "classMax": 50, 
+    "currentEnrollment": 37, 
+    "startDate": "04/17/2023", 
+    "endDate": "7/24/2023" 
+} 
+
+//INSTRUCTOR 
+
+### Render 
+
+PUT https://personalassignment7.onrender.com/instructors/6407998c50ea6decbd5fe3f3 
+
+Content-Type: application/json 
+
+{ 
+    "firstName": "Esther", 
+    "lastName": "Pullman", 
+    "department": "Science", 
+    "email": "epullman@test.com", 
+    "tenure": true, 
+    "course": "ENG-200" 
+} 
+
+ 
+
+### Local Host 
+
+PUT http://localhost:3000/instructors/6407998c50ea6decbd5fe3f3 
+
+Content-Type: application/json 
+
+{ 
+    "firstName": "Esther", 
+    "lastName": "Pullman", 
+    "department": "Science", 
+    "email": "epullman@test.com", 
+    "tenure": true, 
+    "course": "ENG-200" 
+} 
+
+//******************DELETE**************************** 
+
+//COURSE 
+
+### Render 
+
+DELETE https://personalassignment7.onrender.com/courses/640fc8e18991da72b6a984ea 
+
+### Local Host 
+
+DELETE http://localhost:3000/courses/640fc8fb8991da72b6a984eb 
+
+//INSTRUCTOR 
+
+### Render 
+
+DELETE https://personalassignment7.onrender.com/instructors/640fc8aa8991da72b6a984e8 
+
+### Local Host 
+
+DELETE http://localhost:3000/instructors/640f86a0b22a27f40472ff7e 
