@@ -1,0 +1,518 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Personal Assignment 8",
+    "description": "An application to get, update, and delete College Course and Instructor information from a database.",
+    "version": "1.0.0"
+  },
+  "host": "https://personalassignment7.onrender.com",
+  "basePath": "/",
+
+  "tags": [
+    {
+      "name": "Courses",
+      "description": "Methods to GET, POST, PUT, and DELETE courses."
+    },
+    {
+      "name": "Instructors",
+      "description": "Methods to GET, POST, PUT, and DELETE instructors."
+    }
+  ],
+
+
+  "schemes": [
+    "https",
+    "http"
+  ],
+
+  "paths": {
+    "/courses/": {
+      "get": {
+        "tags": [
+          "Courses"
+        ],
+        "summary": "This method retrieves all the courses in a collection.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "courses_auth": [
+              "read:courses"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Courses"
+        ],
+        "summary": "This method creates a new course to add to a collection.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "courseTitle": {
+                  "example": "any"
+                },
+                "courseId": {
+                  "example": "any"
+                },
+                "instructor": {
+                  "example": "any"
+                },
+                "classMax": {
+                  "example": "any"
+                },
+                "currentEnrollment": {
+                  "example": "any"
+                },
+                "startDate": {
+                  "example": "any"
+                },
+                "endDate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "courses_auth": [
+              "read:courses",
+              "write: courses"
+            ]
+          }
+        ]
+      }
+    },
+    "/courses/{id}": {
+      "get": {
+        "tags": [
+          "Courses"
+        ],
+        "summary": "This method retreives one course by its ID from a collection.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "security": [
+          {
+            "courses_auth": [
+              "read:courses"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Courses"
+        ],
+        "summary": "This method updates a course's data.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "courseTitle": {
+                  "example": "any"
+                },
+                "courseId": {
+                  "example": "any"
+                },
+                "instructor": {
+                  "example": "any"
+                },
+                "classMax": {
+                  "example": "any"
+                },
+                "currentEnrollment": {
+                  "example": "any"
+                },
+                "startDate": {
+                  "example": "any"
+                },
+                "endDate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "courses_auth": [
+              "read:courses",
+              "write: courses"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Courses"
+        ],
+        "summary": "This method deletes a course from the collection.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "courses_auth": [
+              "write: courses"
+            ]
+          }
+        ]
+      }
+    },
+    "/instructors/": {
+      "get": {
+        "tags": [
+          "Instructors"
+        ],
+        "summary": "This method retrieves all the instructors in a collection.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "instructors_auth": [
+              "read: instructors"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Instructors"
+        ],
+        "summary": "This method creates a new instructor to add to a collection.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "department": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "tenure": {
+                  "example": "any"
+                },
+                "course": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "instructors_auth": [
+              "read: instructors",
+              "write: instructors"
+            ]
+          }
+        ]
+      }
+    },
+    "/instructors/{id}": {
+      "get": {
+        "tags": [
+          "Instructors"
+        ],
+        "summary": "This method retreives one instructor by its ID from a collection.",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "security": [
+          {
+            "instructors_auth": [
+              "read: instructors"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Instructors"
+        ],
+        "summary": "This method updates an instructor's data.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "department": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "tenure": {
+                  "example": "any"
+                },
+                "course": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "412": {
+            "description": "Precondition Failed"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "instructors_auth": [
+              "read: instructors",
+              "write: instructors"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Instructors"
+        ],
+        "summary": "This method deletes an instructor from the collection.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "instructors_auth": [
+              "write: instructors"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "Course": {
+      "type": "object",
+      "properties": {
+        "courseTitle": {
+          "type": "String"
+        },
+        "courseId": {
+          "type": "string"
+        },
+        "instructor": {
+          "type": "string"
+        },
+        "classMax": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "currentEnrollment": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        }
+      }
+    },
+    "Category": {
+      "firstName": {
+        "type": "string"
+      },
+      "lastName": {
+        "type": "string"
+      },
+      "department": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      },
+      "tenure": {
+        "type": "boolean"
+      },
+      "course": {
+        "type": "string"
+      }
+    }
+  } 
+}
