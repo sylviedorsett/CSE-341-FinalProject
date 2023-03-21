@@ -1,0 +1,92 @@
+{
+    "course": {
+      "courseTitle": "Algebra",
+      "courseId": "MATH-111",
+      "instructor": "George Santos",
+      "classMax": 50,
+      "currentEnrollment": 37,
+      "startDate": "04/17/2023",
+      "endDate": "7/24/2023"
+    },
+    "course1": {
+        "courseTitle": "Algebra2",
+        "courseId": "MATH-112",
+        "instructor": "George Santos",
+        "classMax": 50,
+        "currentEnrollment": 24,
+        "startDate": "04/17/2023",
+        "endDate": "7/24/2023"
+    },
+    "course2": {
+        "courseTitle": "Geometry",
+        "courseId": "MATH-120",
+        "instructor": "Leslie Avery",
+        "classMax": 50,
+        "currentEnrollment": 35,
+        "startDate": "04/17/2023",
+        "endDate": "7/24/2023"
+    },
+    "course3": {
+        "courseTitle": "Freshman English",
+        "courseId": "ENG-100",
+        "instructor": "Sarah Thompson",
+        "classMax": 75,
+        "currentEnrollment": 56,
+        "startDate": "04/17/2023",
+        "endDate": "7/24/2023"
+    },
+    "course4": {
+        "courseTitle": "Sophmore English",
+        "courseId": "ENG-200",
+        "instructor": "Madison Levi",
+        "classMax": 50,
+        "currentEnrollment": 27,
+        "startDate": "04/17/2023",
+        "endDate": "7/24/2023"
+    },
+    "course5": {
+        "courseTitle": "Biology",
+        "courseId": "SCE-115",
+        "instructor": "Esther Pullman",
+        "classMax": 50,
+        "currentEnrollment": 19,
+        "startDate": "04/17/2023",
+        "endDate": "7/24/2023"
+    },
+    "course6": {
+        "courseTitle": "Chemistry",
+        "courseId": "SCE-121",
+        "instructor": "Esther Pullman",
+        "classMax": 50,
+        "currentEnrollment": 37,
+        "startDate": "04/17/2023",
+        "endDate": "7/24/2023"
+    },
+    "course7": {
+        "courseTitle": "Intro to Computer Science",
+        "courseId": "CSE-100",
+        "instructor": "Albert Olsen",
+        "classMax": 50,
+        "currentEnrollment": 44,
+        "startDate": "04/17/2023",
+        "endDate": "7/24/2023"
+    },
+    "course8": {
+        "courseTitle": "Weight Training",
+        "courseId": "PYS-105",
+        "instructor": "Paula Stone",
+        "classMax": 25,
+        "currentEnrollment": 25,
+        "startDate": "04/17/2023",
+        "endDate": "7/24/2023"
+    },
+    "course9": {
+        "courseTitle": "Lap Swimming",
+        "courseId": "PYS-131",
+        "instructor": "Ashton Eldridge",
+        "classMax": 15,
+        "currentEnrollment": 12,
+        "startDate": "04/17/2023",
+        "endDate": "7/24/2023"
+    }
+  }

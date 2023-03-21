@@ -45,7 +45,54 @@ const newCourse = (req, res, next) => {
   });
 };
 
+const newStudent = (req, res, next) => {
+  const validateRule = {
+    firstName: "required|string",
+    lastName: "required|string",
+    major: "required|string",
+    email: "required|email",
+    birthdate: "required|string",
+  };
+  validator(req.body, validateRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: "Validation failed",
+        data: err,
+      });
+    } else {
+      next();
+    }
+  });
+};
+
+const newGradebook = (req, res, next) => {
+  const validateRule = {
+    firstName: "required|string",
+    lastName: "required|string",
+    teacher: "required|string",
+    class: "required|string",
+    gpa: "required|number",
+    assignments: "required|array",
+    missingAssignments: "required|number",
+    absences: "required|number",
+  };
+  validator(req.body, validateRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: "Validation failed",
+        data: err,
+      });
+    } else {
+      next();
+    }
+  });
+};
+
 module.exports = {
   newInstructor,
   newCourse,
+  newGradebook,
+  newStudent,
 };
