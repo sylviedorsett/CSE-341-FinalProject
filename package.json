@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "An application to get, update, and delete College Course and Instructor information from a database.",
   "main": "server.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "nodemon server.js",
     "lint": "eslint .",
