@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const gradebooksSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
@@ -8,7 +8,7 @@ const gradebooksSchema = new mongoose.Schema({
   gpa: { type: Number, required: true },
   assignments: { type: Array, required: true },
   missingAssignments: { type: Number, required: true },
-  absences: { type: Number, required: true },
+  absences: { type: Number, required: true }
 });
 
-module.exports = mongoose.model("gradebooks", gradebooksSchema);
+module.exports = mongoose.model('gradebooks', gradebooksSchema);

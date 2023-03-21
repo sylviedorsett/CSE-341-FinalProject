@@ -7,9 +7,7 @@
   },
   "host": "localhost:3000",
   "basePath": "/",
-  "schemes": [
-    "http"
-  ],
+  "schemes": ["http"],
   "securityDefinitions": {
     "oAuthSample": {
       "type": "oauth2",
@@ -42,13 +40,9 @@
   "paths": {
     "/courses/": {
       "get": {
-        "tags": [
-          "Courses"
-        ],
+        "tags": ["Courses"],
         "summary": "This method retrieves all the courses in a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -60,11 +54,9 @@
         }
       },
       "post": {
-        "tags": [
-          "Courses"
-        ],
+        "tags": ["Courses"],
         "summary": "This method creates a new course to add to a collection.",
-        
+
         "parameters": [
           {
             "name": "body",
@@ -115,13 +107,9 @@
     },
     "/courses/{id}": {
       "get": {
-        "tags": [
-          "Courses"
-        ],
+        "tags": ["Courses"],
         "summary": "This method retreives one course by its ID from a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -140,9 +128,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Courses"
-        ],
+        "tags": ["Courses"],
         "summary": "This method updates a course's data.",
         "parameters": [
           {
@@ -201,9 +187,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Courses"
-        ],
+        "tags": ["Courses"],
         "summary": "This method deletes a course from the collection.",
         "parameters": [
           {
@@ -228,13 +212,9 @@
     },
     "/instructors/": {
       "get": {
-        "tags": [
-          "Instructors"
-        ],
+        "tags": ["Instructors"],
         "summary": "This method retrieves all the instructors in a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -246,9 +226,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Instructors"
-        ],
+        "tags": ["Instructors"],
         "summary": "This method creates a new instructor to add to a collection.",
         "parameters": [
           {
@@ -297,13 +275,9 @@
     },
     "/instructors/{id}": {
       "get": {
-        "tags": [
-          "Instructors"
-        ],
+        "tags": ["Instructors"],
         "summary": "This method retreives one instructor by its ID from a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -322,9 +296,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Instructors"
-        ],
+        "tags": ["Instructors"],
         "summary": "This method updates an instructor's data.",
         "parameters": [
           {
@@ -380,9 +352,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Instructors"
-        ],
+        "tags": ["Instructors"],
         "summary": "This method deletes an instructor from the collection.",
         "parameters": [
           {
@@ -407,13 +377,9 @@
     },
     "/students/": {
       "get": {
-        "tags": [
-          "Students"
-        ],
+        "tags": ["Students"],
         "summary": "This method retrieves all the students in a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -425,9 +391,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Students"
-        ],
+        "tags": ["Students"],
         "summary": "This method creates a new student to add to a collection.",
         "parameters": [
           {
@@ -473,13 +437,9 @@
     },
     "/students/{id}": {
       "get": {
-        "tags": [
-          "Students"
-        ],
+        "tags": ["Students"],
         "summary": "This method retreives one student by its ID from a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -498,9 +458,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Students"
-        ],
+        "tags": ["Students"],
         "summary": "This method updates a student's data.",
         "parameters": [
           {
@@ -553,9 +511,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Students"
-        ],
+        "tags": ["Students"],
         "summary": "This method deletes a student from the collection.",
         "parameters": [
           {
@@ -580,13 +536,9 @@
     },
     "/gradebooks/": {
       "get": {
-        "tags": [
-          "Gradebooks"
-        ],
+        "tags": ["Gradebooks"],
         "summary": "This method retrieves all the gradebooks in a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -598,9 +550,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Gradebooks"
-        ],
+        "tags": ["Gradebooks"],
         "summary": "This method creates a new gradebook to add to a collection.",
         "parameters": [
           {
@@ -655,13 +605,9 @@
     },
     "/gradebooks/{id}": {
       "get": {
-        "tags": [
-          "Gradebooks"
-        ],
+        "tags": ["Gradebooks"],
         "summary": "This method retreives one gradebook by its ID from a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -680,9 +626,7 @@
         }
       },
       "put": {
-        "tags": [
-          "Gradebooks"
-        ],
+        "tags": ["Gradebooks"],
         "summary": "This method updates a gradebook's data.",
         "parameters": [
           {
@@ -744,9 +688,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Gradebooks"
-        ],
+        "tags": ["Gradebooks"],
         "summary": "This method deletes a gradebook from the collection.",
         "parameters": [
           {
@@ -874,5 +816,5 @@
         }
       }
     }
-  } 
+  }
 }

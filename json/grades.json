@@ -1,152 +1,272 @@
 {
-    "student": {
-      "firstName": "Mason",
-      "lastName": "Abner",
-      "teacher": "George Santos",
-      "class": "MATH-111",
-      "gpa": 2.0,
-      "assignments": ["L01: 78", "L01Quiz: 72","L02: 76", "L02Quiz: 74", "L03: 0", "L03Quiz: 0", "Module1Exam: 0" ],
-      "missingAssignments": 3,
-      "absences": 2
-    },
-    "student1": {
-        "firstName": "Ella",
-        "lastName": "Moffet",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 3.2,
-        "assignments": ["L01: 80", "L01Quiz: 85","L02: 72", "L02Quiz: 88", "L03: 90", "L03Quiz: 92", "Module1Exam: 96" ],
-        "missingAssignments": 0,
-        "absences": 0
-      },
-      "student2": {
-        "firstName": "Lily",
-        "lastName": "Hernandez",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 3.7,
-        "assignments": ["L01: 85", "L01Quiz: 88","L02: 82", "L02Quiz: 91", "L03: 84", "L03Quiz: 87", "Module1Exam: 0" ],
-        "missingAssignments": 0,
-        "absences": 0
-      },
-      "student3": {
-        "firstName": "Kaden",
-        "lastName": "Shale",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 2.8,
-        "assignments": ["L01: 80", "L01Quiz: 79","L02: 72", "L02Quiz: 88", "L03: 70", "L03Quiz: 72", "Module1Exam: 76" ],
-        "missingAssignments": 0,
-        "absences": 0
-      },
-      "student4": {
-        "firstName": "Nicole",
-        "lastName": "Foreman",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 3.0,
-        "assignments": ["L01: 90", "L01Quiz: 85","L02: 92", "L02Quiz: 88", "L03: 90", "L03Quiz: 92", "Module1Exam: 87" ],
-        "missingAssignments": 0,
-        "absences": 0
-      },
-      "student5": {
-        "firstName": "Alex",
-        "lastName": "Shepherd",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 2.0,
-        "assignments": ["L01: 70", "L01Quiz: 76","L02: 67", "L02Quiz: 79", "L03: 0", "L03Quiz: 0", "Module1Exam: 82" ],
-        "missingAssignments": 2,
-        "absences": 1
-      },
-      "student6": {
-        "firstName": "Kolton",
-        "lastName": "Reil",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 1.7,
-        "assignments": ["L01: 65", "L01Quiz: 72","L02: 0", "L02Quiz: 72", "L03: 50", "L03Quiz: 64", "Module1Exam: 0" ],
-        "missingAssignments": 3,
-        "absences": 2
-      },
-      "student7": {
-        "firstName": "Patty",
-        "lastName": "Faulkner",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 3.4,
-        "assignments": ["L01: 88", "L01Quiz: 97","L02: 93", "L02Quiz: 95", "L03: 96", "L03Quiz: 87", "Module1Exam: 94" ],
-        "missingAssignments": 0,
-        "absences": 0
-      },
-      "student8": {
-        "firstName": "Jenny",
-        "lastName": "Peters",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 2.9,
-        "assignments": ["L01: 74", "L01Quiz: 76","L02: 82", "L02Quiz: 68", "L03: 78", "L03Quiz: 80", "Module1Exam: 0" ],
-        "missingAssignments": 0,
-        "absences": 1
-      },
-      "student9": {
-        "firstName": "Aaron",
-        "lastName": "Tiller",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 3.0,
-        "assignments": ["L01: 80", "L01Quiz: 85","L02: 72", "L02Quiz: 88", "L03: 90", "L03Quiz: 94", "Module1Exam: 98" ],
-        "missingAssignments": 0,
-        "absences": 0
-      },
-      "student10": {
-        "firstName": "Jeremy",
-        "lastName": "Manning",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 3.6,
-        "assignments": ["L01: 92", "L01Quiz: 85","L02: 96", "L02Quiz: 92", "L03: 94", "L03Quiz: 97", "Module1Exam: 99" ],
-        "missingAssignments": 0,
-        "absences": 0
-      },
-      "student11": {
-        "firstName": "Andrew",
-        "lastName": "McFadden",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 2.5,
-        "assignments": ["L01: 70", "L01Quiz: 75","L02: 72", "L02Quiz: 67", "L03: 71", "L03Quiz: 0", "Module1Exam: 80" ],
-        "missingAssignments": 1,
-        "absences": 0
-      },
-      "student12": {
-        "firstName": "Cody",
-        "lastName": "Kent",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 3.7,
-        "assignments": ["L01: 87", "L01Quiz: 85","L02: 93", "L02Quiz: 96", "L03: 95", "L03Quiz: 98", "Module1Exam: 87" ],
-        "missingAssignments": 0,
-        "absences": 0
-      },
-      "student13": {
-        "firstName": "Edison",
-        "lastName": "Sanchez",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 2.3,
-        "assignments": ["L01: 80", "L01Quiz: 85","L02: 0", "L02Quiz: 0", "L03: 86", "L03Quiz: 83", "Module1Exam: 76" ],
-        "missingAssignments": 2,
-        "absences": 1
-      },
-      "student14": {
-        "firstName": "Katherine",
-        "lastName": "Lopez",
-        "teacher": "George Santos",
-        "class": "MATH-111",
-        "gpa": 3.7,
-        "assignments": ["L01: 87", "L01Quiz: 85","L02: 92", "L02Quiz: 88", "L03: 100", "L03Quiz: 97", "Module1Exam: 98" ],
-        "missingAssignments": 0,
-        "absences": 0
-      }
+  "student": {
+    "firstName": "Mason",
+    "lastName": "Abner",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 2.0,
+    "assignments": [
+      "L01: 78",
+      "L01Quiz: 72",
+      "L02: 76",
+      "L02Quiz: 74",
+      "L03: 0",
+      "L03Quiz: 0",
+      "Module1Exam: 0"
+    ],
+    "missingAssignments": 3,
+    "absences": 2
+  },
+  "student1": {
+    "firstName": "Ella",
+    "lastName": "Moffet",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 3.2,
+    "assignments": [
+      "L01: 80",
+      "L01Quiz: 85",
+      "L02: 72",
+      "L02Quiz: 88",
+      "L03: 90",
+      "L03Quiz: 92",
+      "Module1Exam: 96"
+    ],
+    "missingAssignments": 0,
+    "absences": 0
+  },
+  "student2": {
+    "firstName": "Lily",
+    "lastName": "Hernandez",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 3.7,
+    "assignments": [
+      "L01: 85",
+      "L01Quiz: 88",
+      "L02: 82",
+      "L02Quiz: 91",
+      "L03: 84",
+      "L03Quiz: 87",
+      "Module1Exam: 0"
+    ],
+    "missingAssignments": 0,
+    "absences": 0
+  },
+  "student3": {
+    "firstName": "Kaden",
+    "lastName": "Shale",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 2.8,
+    "assignments": [
+      "L01: 80",
+      "L01Quiz: 79",
+      "L02: 72",
+      "L02Quiz: 88",
+      "L03: 70",
+      "L03Quiz: 72",
+      "Module1Exam: 76"
+    ],
+    "missingAssignments": 0,
+    "absences": 0
+  },
+  "student4": {
+    "firstName": "Nicole",
+    "lastName": "Foreman",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 3.0,
+    "assignments": [
+      "L01: 90",
+      "L01Quiz: 85",
+      "L02: 92",
+      "L02Quiz: 88",
+      "L03: 90",
+      "L03Quiz: 92",
+      "Module1Exam: 87"
+    ],
+    "missingAssignments": 0,
+    "absences": 0
+  },
+  "student5": {
+    "firstName": "Alex",
+    "lastName": "Shepherd",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 2.0,
+    "assignments": [
+      "L01: 70",
+      "L01Quiz: 76",
+      "L02: 67",
+      "L02Quiz: 79",
+      "L03: 0",
+      "L03Quiz: 0",
+      "Module1Exam: 82"
+    ],
+    "missingAssignments": 2,
+    "absences": 1
+  },
+  "student6": {
+    "firstName": "Kolton",
+    "lastName": "Reil",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 1.7,
+    "assignments": [
+      "L01: 65",
+      "L01Quiz: 72",
+      "L02: 0",
+      "L02Quiz: 72",
+      "L03: 50",
+      "L03Quiz: 64",
+      "Module1Exam: 0"
+    ],
+    "missingAssignments": 3,
+    "absences": 2
+  },
+  "student7": {
+    "firstName": "Patty",
+    "lastName": "Faulkner",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 3.4,
+    "assignments": [
+      "L01: 88",
+      "L01Quiz: 97",
+      "L02: 93",
+      "L02Quiz: 95",
+      "L03: 96",
+      "L03Quiz: 87",
+      "Module1Exam: 94"
+    ],
+    "missingAssignments": 0,
+    "absences": 0
+  },
+  "student8": {
+    "firstName": "Jenny",
+    "lastName": "Peters",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 2.9,
+    "assignments": [
+      "L01: 74",
+      "L01Quiz: 76",
+      "L02: 82",
+      "L02Quiz: 68",
+      "L03: 78",
+      "L03Quiz: 80",
+      "Module1Exam: 0"
+    ],
+    "missingAssignments": 0,
+    "absences": 1
+  },
+  "student9": {
+    "firstName": "Aaron",
+    "lastName": "Tiller",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 3.0,
+    "assignments": [
+      "L01: 80",
+      "L01Quiz: 85",
+      "L02: 72",
+      "L02Quiz: 88",
+      "L03: 90",
+      "L03Quiz: 94",
+      "Module1Exam: 98"
+    ],
+    "missingAssignments": 0,
+    "absences": 0
+  },
+  "student10": {
+    "firstName": "Jeremy",
+    "lastName": "Manning",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 3.6,
+    "assignments": [
+      "L01: 92",
+      "L01Quiz: 85",
+      "L02: 96",
+      "L02Quiz: 92",
+      "L03: 94",
+      "L03Quiz: 97",
+      "Module1Exam: 99"
+    ],
+    "missingAssignments": 0,
+    "absences": 0
+  },
+  "student11": {
+    "firstName": "Andrew",
+    "lastName": "McFadden",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 2.5,
+    "assignments": [
+      "L01: 70",
+      "L01Quiz: 75",
+      "L02: 72",
+      "L02Quiz: 67",
+      "L03: 71",
+      "L03Quiz: 0",
+      "Module1Exam: 80"
+    ],
+    "missingAssignments": 1,
+    "absences": 0
+  },
+  "student12": {
+    "firstName": "Cody",
+    "lastName": "Kent",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 3.7,
+    "assignments": [
+      "L01: 87",
+      "L01Quiz: 85",
+      "L02: 93",
+      "L02Quiz: 96",
+      "L03: 95",
+      "L03Quiz: 98",
+      "Module1Exam: 87"
+    ],
+    "missingAssignments": 0,
+    "absences": 0
+  },
+  "student13": {
+    "firstName": "Edison",
+    "lastName": "Sanchez",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 2.3,
+    "assignments": [
+      "L01: 80",
+      "L01Quiz: 85",
+      "L02: 0",
+      "L02Quiz: 0",
+      "L03: 86",
+      "L03Quiz: 83",
+      "Module1Exam: 76"
+    ],
+    "missingAssignments": 2,
+    "absences": 1
+  },
+  "student14": {
+    "firstName": "Katherine",
+    "lastName": "Lopez",
+    "teacher": "George Santos",
+    "class": "MATH-111",
+    "gpa": 3.7,
+    "assignments": [
+      "L01: 87",
+      "L01Quiz: 85",
+      "L02: 92",
+      "L02Quiz: 88",
+      "L03: 100",
+      "L03Quiz: 97",
+      "Module1Exam: 98"
+    ],
+    "missingAssignments": 0,
+    "absences": 0
   }
+}

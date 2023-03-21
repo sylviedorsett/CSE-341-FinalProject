@@ -22,7 +22,6 @@ GET https://""/instructors
 
 GET http://localhost:3000/instructors 
 
-
 //**********************GET ONE************************ 
 
 //COURSE 
@@ -33,7 +32,7 @@ GET https://""/courses/6407997550ea6decbd5fe3e4
 
 ### Local Host 
 
-GET http://localhost:3000/courses/6407997550ea6decbd5fe3e4 
+GET http://localhost:3000/courses/6419057f291ee9af6c791936 
 
 //INSTRUCTOR 
 
