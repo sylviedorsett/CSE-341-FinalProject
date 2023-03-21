@@ -1,5 +1,4 @@
-const mongoose = require("mongoose");
-//const courseSchema = require("../models/courseSchema");
+const mongoose = require('mongoose');
 
 const instructorSchema = new mongoose.Schema({
   firstName: { type: String, required: true },
@@ -7,11 +6,10 @@ const instructorSchema = new mongoose.Schema({
   department: { type: String, required: true },
   email: { type: String, unique: true, required: true },
   tenure: { type: Boolean, required: true },
-  course: { type: String, required: true },
-  //course: [courseSchema],
+  course: { type: [String], required: true }
 });
 
-module.exports = mongoose.model("instructors", instructorSchema);
+module.exports = mongoose.model('instructors', instructorSchema);
 
 /*    "securityDefinitions": {
         "courses_auth": {
