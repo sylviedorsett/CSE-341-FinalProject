@@ -4,7 +4,7 @@
 
 ### Render 
 
-GET https://personalassignment7.onrender.com/courses 
+GET https://""/courses 
 
 ### Local Host 
 
@@ -16,7 +16,7 @@ GET http://localhost:3000/courses
 
 ### Render 
 
-GET https://personalassignment7.onrender.com/instructors 
+GET https://""/instructors 
 
 ### Local Host 
 
@@ -29,7 +29,7 @@ GET http://localhost:3000/instructors
 
 ### Render 
 
-GET https://personalassignment7.onrender.com/courses/6407997550ea6decbd5fe3e4 
+GET https://""/courses/6407997550ea6decbd5fe3e4 
 
 ### Local Host 
 
@@ -39,7 +39,7 @@ GET http://localhost:3000/courses/6407997550ea6decbd5fe3e4
 
 ### Render 
 
-GET https://personalassignment7.onrender.com/instructors/6407998c50ea6decbd5fe3ef 
+GET https://""/instructors/6407998c50ea6decbd5fe3ef 
 
 ### Local Host 
 
@@ -51,7 +51,7 @@ GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3ef
 
 ### Render 
 
-POST https://personalassignment7.onrender.com/courses 
+POST https://""/courses 
 
 Content-Type: application/json 
 
@@ -87,7 +87,7 @@ Content-Type: application/json
 
 ### Render 
 
-POST https://personalassignment7.onrender.com/instructors 
+POST https://""/instructors 
 
 Content-Type: application/json 
 
@@ -121,7 +121,7 @@ Content-Type: application/json
 
 ### Render 
 
-PUT https://personalassignment7.onrender.com/courses/640f9918e9181eb09413d6c7 
+PUT https://""/courses/640f9918e9181eb09413d6c7 
 
 Content-Type: application/json 
 
@@ -155,7 +155,7 @@ Content-Type: application/json
 
 ### Render 
 
-PUT https://personalassignment7.onrender.com/instructors/6407998c50ea6decbd5fe3f3 
+PUT https://""/instructors/6407998c50ea6decbd5fe3f3 
 
 Content-Type: application/json 
 
@@ -191,7 +191,7 @@ Content-Type: application/json
 
 ### Render 
 
-DELETE https://personalassignment7.onrender.com/courses/640fc8e18991da72b6a984ea 
+DELETE https://""/courses/640fc8e18991da72b6a984ea 
 
 ### Local Host 
 
@@ -201,7 +201,7 @@ DELETE http://localhost:3000/courses/640fc8fb8991da72b6a984eb
 
 ### Render 
 
-DELETE https://personalassignment7.onrender.com/instructors/640fc8aa8991da72b6a984e8 
+DELETE https://""/instructors/640fc8aa8991da72b6a984e8 
 
 ### Local Host 
 
