@@ -769,5 +769,110 @@
         }
       }
     }
-  }
+  },
+  "definitions": {
+    "Course": {
+      "type": "object",
+      "properties": {
+        "courseTitle": {
+          "type": "String"
+        },
+        "courseId": {
+          "type": "string"
+        },
+        "instructor": {
+          "type": "string"
+        },
+        "classMax": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "currentEnrollment": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "startDate": {
+          "type": "string"
+        },
+        "endDate": {
+          "type": "string"
+        }
+      }
+    },
+    "Instructor": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "department": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "tenure": {
+          "type": "boolean"
+        },
+        "course": {
+          "type": "string"
+        }
+      }
+    },
+    "Student": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "major": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "birthdate": {
+          "type": "string"
+        }
+      }
+    },
+    "Gradebook": {
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "teacher": {
+          "type": "string"
+        },
+        "class": {
+          "type": "string"
+        },
+        "gpa": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "assignments": {
+          "type": "array"
+        },
+        "missingAssignments": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "absences": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    }
+  } 
 }
