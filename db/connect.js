@@ -1,12 +1,12 @@
-const dotenv = require("dotenv");
-const mongoose = require("mongoose");
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
 dotenv.config();
 
 let _db;
 
 const initDb = (callback) => {
   if (_db) {
-    console.log("DB is already initialized.");
+    console.log('DB is already initialized.');
     return callback(null, _db);
   }
   mongoose
@@ -22,12 +22,12 @@ const initDb = (callback) => {
 
 const getDb = () => {
   if (!_db) {
-    throw Error("DB not initialized.");
+    throw Error('DB not initialized.');
   }
   return _db;
 };
 
 module.exports = {
   initDb,
-  getDb,
+  getDb
 };

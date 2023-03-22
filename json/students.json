@@ -1,0 +1,156 @@
+{
+  "student": {
+    "firstName": "Mason",
+    "lastName": "Abner",
+    "major": "Education",
+    "email": "mabner@test.com",
+    "birthdate": "01/01/2000"
+  },
+  "student1": {
+    "firstName": "Ella",
+    "lastName": "Moffet",
+    "major": "Applied Technology",
+    "email": "gsantos@test.com",
+    "birthdate": "02/01/1999"
+  },
+  "student2": {
+    "firstName": "Lilly",
+    "lastName": "Hernandez",
+    "major": "Science",
+    "email": "lhernandez@test.com",
+    "birthdate": "03/01/2003"
+  },
+  "student3": {
+    "firstName": "Kaden",
+    "lastName": "Shale",
+    "major": "Computer Science",
+    "email": "kshale@test.com",
+    "birthdate": "05/01/2001"
+  },
+  "student4": {
+    "firstName": "Nicole",
+    "lastName": "Foreman",
+    "major": "Mathematics",
+    "email": "nforeman@test.com",
+    "birthdate": "08/01/1995"
+  },
+  "student5": {
+    "firstName": "Alex",
+    "lastName": "Shepherd",
+    "major": "Science",
+    "email": "ashepherd@test.com",
+    "birthdate": "12/01/2002"
+  },
+  "student6": {
+    "firstName": "Kolton",
+    "lastName": "Reil",
+    "major": "Computer Science",
+    "email": "kreil@test.com",
+    "birthdate": "01/01/2003"
+  },
+  "student7": {
+    "firstName": "Patty",
+    "lastName": "Faulkner",
+    "major": "Arts",
+    "email": "pfaulkner@test.com",
+    "birthdate": "11/01/2002"
+  },
+  "student8": {
+    "firstName": "Jenny",
+    "lastName": "Peters",
+    "major": "Science",
+    "email": "jpeters@test.com",
+    "birthdate": "06/01/1999"
+  },
+  "student9": {
+    "firstName": "Aaron",
+    "lastName": "Tiller",
+    "major": "English",
+    "email": "atiller@test.com",
+    "birthdate": "03/01/2003"
+  },
+  "student10": {
+    "firstName": "Jeremy",
+    "lastName": "Manning",
+    "major": "Mathematics",
+    "email": "jmanning@test.com",
+    "birthdate": "07/01/2001"
+  },
+  "student11": {
+    "firstName": "Andrew",
+    "lastName": "McFadden",
+    "major": "Computer Science",
+    "email": "amcfadden@test.com",
+    "birthdate": "09/01/1998"
+  },
+  "student12": {
+    "firstName": "Cody",
+    "lastName": "Kent",
+    "major": "English",
+    "email": "ckent@test.com",
+    "birthdate": "11/01/2004"
+  },
+  "student13": {
+    "firstName": "Edison",
+    "lastName": "Sanchez",
+    "major": "Education",
+    "email": "esanchez@test.com",
+    "birthdate": "08/01/1996"
+  },
+  "student14": {
+    "firstName": "Katherine",
+    "lastName": "Lopez",
+    "major": "English",
+    "email": "klopez@test.com",
+    "birthdate": "11/01/1999"
+  },
+  "student15": {
+    "firstName": "Valerie",
+    "lastName": "Houston",
+    "major": "Computer Science",
+    "email": "vhouston@test.com",
+    "birthdate": "07/01/2000"
+  },
+  "student16": {
+    "firstName": "Don",
+    "lastName": "Holmes",
+    "major": "Education",
+    "email": "dholmes@test.com",
+    "birthdate": "7/01/2004"
+  },
+  "student17": {
+    "firstName": "Lydia",
+    "lastName": "Jovet",
+    "major": "English",
+    "email": "ljovet@test.com",
+    "birthdate": "01/01/1997"
+  },
+  "student18": {
+    "firstName": "Michael",
+    "lastName": "Brown",
+    "major": "Mathematics",
+    "email": "mbrown@test.com",
+    "birthdate": "09/01/2003"
+  },
+  "student19": {
+    "firstName": "Ryan",
+    "lastName": "Abner",
+    "major": "Education",
+    "email": "rabner@test.com",
+    "birthdate": "10/01/1999"
+  },
+  "student20": {
+    "firstName": "Lori",
+    "lastName": "Clark",
+    "major": "Computer Science",
+    "email": "lclark@test.com",
+    "birthdate": "09/01/2004"
+  },
+  "student21": {
+    "firstName": "Renee",
+    "lastName": "Contreras",
+    "major": "Science",
+    "email": "rcontreras@test.com",
+    "birthdate": "10/01/2000"
+  }
+}
