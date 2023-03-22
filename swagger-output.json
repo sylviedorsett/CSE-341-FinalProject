@@ -5,13 +5,13 @@
     "description": "An application to get, update, and delete College Course and Instructor information from a database.",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "college-api-cse341-final-project.onrender.com",
   "basePath": "/",
-  "schemes": ["http"],
+  "schemes": ["https"],
   "securityDefinitions": {
     "oAuthSample": {
       "type": "oauth2",
-      "authorizationUrl": "https://localhost:3000/login",
+      "authorizationUrl": "https://college-api-cse341-final-project.onrender.com/login",
       "flow": "implicit",
       "scopes": {
         "read_docs": "read your database collections",
