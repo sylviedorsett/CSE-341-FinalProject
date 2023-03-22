@@ -6,12 +6,12 @@ const doc = {
     description:
       'An application to get, update, and delete College Course and Instructor information from a database.'
   },
-  host: 'localhost:3000',
-  schemes: ['http'],
+  host: 'college-api-cse341-final-project.onrender.com',
+  schemes: ['https'],
   securityDefinitions: {
     oAuthSample: {
       type: 'oauth2',
-      authorizationUrl: 'https://localhost:3000/login',
+      authorizationUrl: 'https://college-api-cse341-final-project.onrender.com/login',
       flow: 'implicit',
       scopes: {
         read_docs: 'read your database collections',
