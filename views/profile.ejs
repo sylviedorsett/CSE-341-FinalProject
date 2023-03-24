@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="/frontend/css/styles.css">
-        <title>Homepage</title>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <% if (user) { %>
-                <li><a href="/auth/logout">Log out</a></li>
-                <% } else { %>
-                <li><a href="/auth/login">Login</a></li>
-                <% } %>
-                <li><a href="/">Homepage</a></li>
-                <li><a href="/profile">Profile</a></li>
-            </ul>
-        </nav>
-        <header>
-            <h6>Welcome to your profile, <%= user %></h6>
-        </header>
-        <main>
-            <img src="<%= user.thumbnail %>" />
-            <p>This is your profile thumbnail</p>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/frontend/css/styles.css">
+    <title>Homepage</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <% if (user) { %>
+            <li><a href="/auth/logout">Log out</a></li>
+            <% } else { %>
+            <li><a href="/auth/login">Login</a></li>
+            <% } %>
+            <li><a href="/">Homepage</a></li>
+            <li><a href="/profile">Profile</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h6>Welcome to your profile, <%= user.nickname %></h6>
+    </header>
+    <main>
+        <% if (user){ %>
+        <div class="profileInfo">
+            <img src="<% user.picture $>" alt="<% user.nikname $> picture">
+                <p class="name">
+                    <% user.nickname.charAt(0) $>
+                </p>
+            </div>
+            
+            
+            
+            <% } %>
+
         </main>
     </body>
 </html>
