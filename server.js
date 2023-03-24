@@ -13,9 +13,8 @@ const express = require('express');
 const port = process.env.PORT || 3000;
 
 // set view engine
+server.set("views", "views")
 server.set('view engine', 'ejs');
-
-
 
 /* Auth Configurations */
 const config = {

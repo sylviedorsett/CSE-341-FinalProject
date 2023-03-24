@@ -1,8 +1,7 @@
-// IMPORTANT INFO: Swagger tags were added. 
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-  res.render('home',  { user: req.user });
+  res.render('home',  {user: req.oidc.user});
 });
 
 // router.get('/', (req, res) => {
@@ -13,6 +12,5 @@ router.use('/api-docs', require('./swagger'));
 router.use('/courses', require('./courses'));
 router.use('/instructors', require('./instructors'));
 router.use('/profile', require('./profile'));
-router.use('/auth', require('./auth'));
 
 module.exports = router;

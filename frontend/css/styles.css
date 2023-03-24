@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #00438a;
+    --primary-color: #3d37fa;
     --secondary-color: #8fcbff;
     --sub-main-color: #000000;
-    --sub-second-color: #b66100;
+    --sub-second-color: white;
 }
 
 
@@ -27,7 +27,7 @@ nav li{
 nav a{
     color: var(--sub-second-color);
     font-size: 18px;
-    background:var(--secondary-color);
+    background:var(--sub-main-color);
     text-decoration: none;
     padding: 15px;
     border-radius: .5rem;
