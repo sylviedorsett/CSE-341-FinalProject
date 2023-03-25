@@ -1,0 +1,49 @@
+<!-- THIS FILE WON'T BE USED : Josue Centurion -->
+
+
+
+<!DOCTYPE< html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/styles.css">
+        <title>Login</title>
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <% if (user) { %>
+                <li><a href="/logout">Log out</a></li>
+                <li>
+                    <p> <%= user %></p>
+                </li>
+                <% } else { %>
+                <li><a href="/login">Login</a></li>
+                <% } %>
+                <li><a href="/">Homepage</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </nav>
+        <header>
+            <% if (message) { %>
+            <h1><%= message %></h1>
+            <% } %>
+
+        </header>
+        <main>
+
+            <form method="post" action="/logining">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <br>
+            <a class="google-btn" href="/login/">Login with Auth0</a>
+        </main>
+    </body>
+
+    </html>

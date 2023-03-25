@@ -1,0 +1,48 @@
+:root {
+    --primary-color: #3d37fa;
+    --secondary-color: #8fcbff;
+    --sub-main-color: #000000;
+    --sub-second-color: white;
+}
+
+
+body{
+    font-family: arial;
+    margin: 0;
+}
+nav{
+    background: var(--primary-color);
+    padding: 20px 10px;
+}
+nav ul{
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+}
+nav li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+nav a{
+    color: var(--sub-second-color);
+    font-size: 18px;
+    background:var(--sub-main-color);
+    text-decoration: none;
+    padding: 15px;
+    border-radius: .5rem;
+    display: block;
+}
+main, header{
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 10px;
+    color: var(--sub-main-color);
+}
+
+.google-btn{
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
