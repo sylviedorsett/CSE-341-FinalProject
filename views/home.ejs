@@ -10,7 +10,7 @@
             <ul>
                 <% if (user) { %>
                 <li><a href="/logout">Log out</a></li>
-                <li><p> <%= user %></p></li>
+                <li><p> <%= user.nickname %></p></li>
                 <% } else { %>
                 <li><a href="/login">Login</a></li>
                 <% } %>

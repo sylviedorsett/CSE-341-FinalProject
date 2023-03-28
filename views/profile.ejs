@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/frontend/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Homepage</title>
 </head>
 
@@ -11,9 +11,9 @@
     <nav>
         <ul>
             <% if (user) { %>
-            <li><a href="/auth/logout">Log out</a></li>
+            <li><a href="/logout">Log out</a></li>
             <% } else { %>
-            <li><a href="/auth/login">Login</a></li>
+            <li><a href="/login">Login</a></li>
             <% } %>
             <li><a href="/">Homepage</a></li>
             <li><a href="/profile">Profile</a></li>
@@ -24,16 +24,16 @@
     </header>
     <main>
         <% if (user){ %>
-        <div class="profileInfo">
-            <img src="<% user.picture $>" alt="<% user.nikname $> picture">
-                <p class="name">
-                    <% user.nickname.charAt(0) $>
-                </p>
+            <div class="profileInfo">
+                <img src="<%= user.picture %>" alt="<%= user.nickname %> picture">
+                    <p class="name">
+                        <%= user.nickname.charAt(0) %>
+                    </p>
             </div>
             
             
             
-            <% } %>
+        <% } %>
 
         </main>
     </body>
