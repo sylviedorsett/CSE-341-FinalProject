@@ -54,3 +54,6 @@ mongoose.initDb((err) => {
     console.log('Connected to database.');
   }
 });
+
+
+module.exports = server;

@@ -86,7 +86,7 @@ Content-Type: application/json
 
 ### Render 
 
-POST https://""/instructors 
+POST https://college-api-cse341-final-project.onrender.com/instructors 
 
 Content-Type: application/json 
 
@@ -101,7 +101,7 @@ Content-Type: application/json
 
 ### Local Host 
 
-POST http://localhost:3000/instructors 
+POST https://college-api-cse341-final-project.onrender.com/instructors 
 
 Content-Type: application/json 
 
@@ -171,7 +171,7 @@ Content-Type: application/json
 
 ### Local Host 
 
-PUT http://localhost:3000/instructors/6407998c50ea6decbd5fe3f3 
+POST https://college-api-cse341-final-project.onrender.com/instructors 
 
 Content-Type: application/json 
 
@@ -205,3 +205,10 @@ DELETE https://""/instructors/640fc8aa8991da72b6a984e8
 ### Local Host 
 
 DELETE http://localhost:3000/instructors/640f86a0b22a27f40472ff7e 
+
+
+
+# ============================== On Render =====================
+
+###
+https://college-api-cse341-final-project.onrender.com/instructors/640f86a0b22a27f40472ff7e 
