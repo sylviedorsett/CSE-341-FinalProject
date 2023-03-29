@@ -8,7 +8,7 @@ router.get('/', getInstructorsController.getAllInstructors);
 router.get('/:id', getInstructorsController.getInstructor);
 router.post(
   '/',
-  auth.isAuthenticated,
+  /*auth.isAuthenticated,*/
   validate.newInstructor,
   getInstructorsController.postInstructor
 );
