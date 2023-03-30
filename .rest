@@ -1,59 +1,85 @@
 //**********************GET ALL************************ 
 
 //COURSES 
-
 ### Render 
-
-GET https://""/courses 
+GET https://https://college-api-cse341-final-project.onrender.com/courses 
 
 ### Local Host 
-
 GET http://localhost:3000/courses 
 
 
 
 //INSTRUCTORS 
-
 ### Render 
-
-GET https://""/instructors 
+GET https://https://college-api-cse341-final-project.onrender.com/instructors 
 
 ### Local Host 
-
 GET http://localhost:3000/instructors 
+
+
+
+//GRADEBOOKS 
+### Render 
+GET https://https://college-api-cse341-final-project.onrender.com/gradebooks 
+
+### Local Host 
+GET http://localhost:3000/gradebooks
+
+
+
+//STUDENTS 
+### Render 
+GET https://https://college-api-cse341-final-project.onrender.com/students 
+
+### Local Host 
+GET http://localhost:3000/students
+
+
 
 //**********************GET ONE************************ 
 
 //COURSE 
-
 ### Render 
-
-GET https://""/courses/6407997550ea6decbd5fe3e4 
+GET https://https://college-api-cse341-final-project.onrender.com/courses/6419057f291ee9af6c79193b 
 
 ### Local Host 
+GET http://localhost:3000/courses/6419057f291ee9af6c79193b 
 
-GET http://localhost:3000/courses/6419057f291ee9af6c791936 
+
 
 //INSTRUCTOR 
-
 ### Render 
-
-GET https://""/instructors/6407998c50ea6decbd5fe3ef 
+GET https://https://college-api-cse341-final-project.onrender.com/instructors/641905c0291ee9af6c791954 
 
 ### Local Host 
+GET http://localhost:3000/instructors/641905c0291ee9af6c791954 
 
-GET http://localhost:3000/instructors/6407998c50ea6decbd5fe3ef 
+
+
+//GRADEBOOKS 
+### Render 
+GET https://https://college-api-cse341-final-project.onrender.com/gradebooks/6419059a291ee9af6c791941
+
+### Local Host 
+GET http://localhost:3000/gradebooks/6419059a291ee9af6c791941
+
+
+
+//STUDENTS 
+### Render 
+GET https://https://college-api-cse341-final-project.onrender.com/students/641905d6291ee9af6c79195d 
+
+### Local Host 
+GET http://localhost:3000/students/641905d6291ee9af6c79195d 
+
+
 
 //*******************POST*************************** 
 
 //COURSE 
-
 ### Render 
-
-POST https://""/courses 
-
+POST https://https://college-api-cse341-final-project.onrender.com/courses 
 Content-Type: application/json 
-
 { 
     "courseTitle": "Under Water Basket Weaving", 
     "courseId": "PYS-212", 
@@ -63,15 +89,10 @@ Content-Type: application/json
     "startDate": "04/17/2023", 
     "endDate": "7/24/2023" 
 } 
-
- 
 
 ### Local Host 
-
 POST http://localhost:3000/courses 
-
 Content-Type: application/json 
-
 { 
     "courseTitle": "Under Water Basket Weaving", 
     "courseId": "PYS-212", 
@@ -81,15 +102,13 @@ Content-Type: application/json
     "startDate": "04/17/2023", 
     "endDate": "7/24/2023" 
 } 
+
+
 
 //INSTRUCTOR 
-
 ### Render 
-
-POST https://college-api-cse341-final-project.onrender.com/instructors 
-
+POST https://https://college-api-cse341-final-project.onrender.com/instructors 
 Content-Type: application/json 
-
 { 
     "firstName": "Lily", 
     "lastName": "Palmer", 
@@ -100,11 +119,8 @@ Content-Type: application/json
 } 
 
 ### Local Host 
-
-POST https://college-api-cse341-final-project.onrender.com/instructors 
-
+POST http://localhost:3000/instructors 
 Content-Type: application/json 
-
 { 
     "firstName": "Lily", 
     "lastName": "Palmer", 
@@ -113,21 +129,91 @@ Content-Type: application/json
     "tenure": false, 
     "course": "PYS-212" 
 } 
+
+
+
+//GRADEBOOK
+### Render
+POST https://https://college-api-cse341-final-project.onrender.com/gradebooks 
+Content-Type: application/json 
+{ 
+    "firstName": "Andrew", 
+    "lastName": "Correll", 
+    "teacher": "George Santos", 
+    "class": "MATH-111", 
+    "gpa": 1.6, 
+    "assignments": [
+      "L01: 78",
+      "L01Quiz: 72",
+      "L02: 76",
+      "L02Quiz: 0",
+      "L03: 0",
+      "L03Quiz: 0",
+      "Module1Exam: 0"
+    ],
+    "missingAssignment": 4,
+    "absences": 0 
+} 
+
+### Local Host 
+POST http://localhost:3000/gradebooks 
+Content-Type: application/json 
+{ 
+    "firstName": "Andrew", 
+    "lastName": "Correll", 
+    "teacher": "George Santos", 
+    "class": "MATH-111", 
+    "gpa": 1.6, 
+    "assignments": [
+      "L01: 78",
+      "L01Quiz: 72",
+      "L02: 76",
+      "L02Quiz: 0",
+      "L03: 0",
+      "L03Quiz: 0",
+      "Module1Exam: 0"
+    ],
+    "missingAssignment": 4,
+    "absences": 0 
+} 
+
+
+
+//STUDENT
+### Render
+POST https://https://college-api-cse341-final-project.onrender.com/students
+Content-Type: application/json 
+{ 
+    "firstName": "Ava",
+    "lastName": "Long",
+    "major": "Arts",
+    "email": "along@test.com",
+    "birthdate": "06/01/2003"
+}
+
+### Local Host
+POST https://https://localhost:3000/students
+Content-Type: application/json 
+{ 
+    "firstName": "Ava",
+    "lastName": "Long",
+    "major": "Arts",
+    "email": "along@test.com",
+    "birthdate": "06/01/2003"
+}
+
+
 
 //******************UPDATE/PUT**************************** 
 
 //COURSE 
-
 ### Render 
-
-PUT https://""/courses/640f9918e9181eb09413d6c7 
-
+PUT https://college-api-cse341-final-project.onrender.com/courses/6419057f291ee9af6c79193b 
 Content-Type: application/json 
-
 { 
-    "courseTitle": "Algebra", 
-    "courseId": "MATH-111", 
-    "instructor": "George Santos", 
+    "courseTitle": "Biology", 
+    "courseId": "SCE-115", 
+    "instructor": "Esther Pullman", 
     "classMax": 50, 
     "currentEnrollment": 37, 
     "startDate": "04/17/2023", 
@@ -135,80 +221,151 @@ Content-Type: application/json
 } 
 
 ### Local Host 
-
-PUT http://localhost:3000/courses/6407997550ea6decbd5fe3e4 
-
+PUT http://localhost:3000/courses/6419057f291ee9af6c79193b 
 Content-Type: application/json 
-
 { 
-    "courseTitle": "Algebra", 
-    "courseId": "MATH-111", 
-    "instructor": "George Santos", 
+    "courseTitle": "Biology", 
+    "courseId": "SCE-115", 
+    "instructor": "Esther Pullman", 
     "classMax": 50, 
     "currentEnrollment": 37, 
     "startDate": "04/17/2023", 
     "endDate": "7/24/2023" 
 } 
+
+
 
 //INSTRUCTOR 
-
 ### Render 
-
-PUT https://""/instructors/6407998c50ea6decbd5fe3f3 
-
+PUT https://college-api-cse341-final-project.onrender.com/instructors/641905c0291ee9af6c791954 
 Content-Type: application/json 
-
 { 
-    "firstName": "Esther", 
-    "lastName": "Pullman", 
-    "department": "Science", 
-    "email": "epullman@test.com", 
-    "tenure": true, 
+    "firstName": "Madison", 
+    "lastName": "Levi", 
+    "department": "English", 
+    "email": "mlevi@test.com", 
+    "tenure": false, 
     "course": "ENG-200" 
 } 
-
- 
 
 ### Local Host 
-
-POST https://college-api-cse341-final-project.onrender.com/instructors 
-
+POST https://localhost:3000/instructors/641905c0291ee9af6c791954
 Content-Type: application/json 
-
 { 
-    "firstName": "Esther", 
-    "lastName": "Pullman", 
-    "department": "Science", 
-    "email": "epullman@test.com", 
-    "tenure": true, 
+    "firstName": "Madison", 
+    "lastName": "Levi", 
+    "department": "English", 
+    "email": "mlevi@test.com", 
+    "tenure": false, 
     "course": "ENG-200" 
 } 
+
+
+
+//GRADEBOOKS 
+### Render 
+PUT https://college-api-cse341-final-project.onrender.com/gradebooks/6419059a291ee9af6c791941 
+Content-Type: application/json 
+{ 
+    "firstName": "Mason", 
+    "lastName": "Abner", 
+    "teacher": "George Santos", 
+    "class": "MATH-111",
+    "gpa": 2.7,
+    "assignments":  [
+      "L01: 78",
+      "L01Quiz: 72",
+      "L02: 76",
+      "L02Quiz: 74",
+      "L03: 70",
+      "L03Quiz: 80",
+      "Module1Exam: 0"
+    ],
+    "missingAssignments": 1,
+    "absences": 2 
+} 
+
+### Local Host 
+POST https://localhost:3000/gradebooks/6419059a291ee9af6c791941
+Content-Type: application/json 
+{ 
+    "firstName": "Mason", 
+    "lastName": "Abner", 
+    "teacher": "George Santos", 
+    "class": "MATH-111",
+    "gpa": 2.7,
+    "assignments":  [
+      "L01: 78",
+      "L01Quiz: 72",
+      "L02: 76",
+      "L02Quiz: 74",
+      "L03: 70",
+      "L03Quiz: 80",
+      "Module1Exam: 0"
+    ],
+    "missingAssignments": 1,
+    "absences": 2 
+}
+
+
+
+//STUDENTS
+### Render 
+PUT https://college-api-cse341-final-project.onrender.com/students/641905d6291ee9af6c79195d 
+Content-Type: application/json 
+{ 
+    "firstName": "Kaden", 
+    "lastName": "Shale", 
+    "major": "English", 
+    "email": "kshale@test.com", 
+    "birthdate": "05/01/2001"
+} 
+
+### Local Host 
+POST https://localhost:3000/students/641905d6291ee9af6c79195d
+Content-Type: application/json 
+{ 
+    "firstName": "Kaden", 
+    "lastName": "Shale", 
+    "major": "English", 
+    "email": "kshale@test.com", 
+    "birthdate": "05/01/2001"
+} 
+
+
 
 //******************DELETE**************************** 
 
 //COURSE 
-
 ### Render 
-
-DELETE https://""/courses/640fc8e18991da72b6a984ea 
+DELETE https://college-api-cse341-final-project.onrender.com/courses/6419057f291ee9af6c79193b 
 
 ### Local Host 
+DELETE http://localhost:3000/courses/6419057f291ee9af6c79193b 
 
-DELETE http://localhost:3000/courses/640fc8fb8991da72b6a984eb 
+
 
 //INSTRUCTOR 
-
 ### Render 
-
-DELETE https://""/instructors/640fc8aa8991da72b6a984e8 
+DELETE https://college-api-cse341-final-project.onrender.com/instructors/641905c0291ee9af6c791954 
 
 ### Local Host 
-
-DELETE http://localhost:3000/instructors/640f86a0b22a27f40472ff7e 
-
+DELETE http://localhost:3000/instructors/641905c0291ee9af6c791954 
 
 
-# ============================== On Render =====================
 
-###
-https://college-api-cse341-final-project.onrender.com/instructors/640f86a0b22a27f40472ff7e 
+//GRADEBOOK 
+### Render 
+DELETE https://college-api-cse341-final-project.onrender.com/gradebooks/6419059a291ee9af6c791941 
+
+### Local Host 
+DELETE http://localhost:3000/gradebooks/6419059a291ee9af6c791941 
+
+
+
+//STUDENT 
+### Render 
+DELETE https://college-api-cse341-final-project.onrender.com/students/641905d6291ee9af6c79195d 
+
+### Local Host 
+DELETE http://localhost:3000/students/641905d6291ee9af6c79195d 
