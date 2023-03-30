@@ -204,9 +204,7 @@ describe('Instructor API Endpoints', () => {
       });
 
       expect(res.status).toBe(400);
-      expect(res.body).toEqual(
-        '[Invalid ID](poe://www.poe.com/_api/key_phrase?phrase=Invalid%20ID&prompt=Tell%20me%20more%20about%20Invalid%20ID.) entered. Please try again.'
-      );
+      expect(res.body).toEqual('Invalid ID entered. Please try again.');
     });
   });
 

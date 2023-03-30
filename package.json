@@ -1,7 +1,6 @@
 {
   "name": "personal_assignment_6",
   "version": "1.0.0",
-  "type": "module",
   "description": "An application to get, update, and delete College Course and Instructor information from a database.",
   "main": "server.js",
   "engines": {
@@ -12,7 +11,7 @@
     "lint": "eslint .",
     "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config .prettierrc --ignore-path .gitignore",
     "swagger": "node ./swagger.js",
-    "test": "jest --verbose false --testTimeout=100000 --detectOpenHandles --coverage"
+    "test": "jest --verbose false --testTimeout=100000 --detectOpenHandles"
   },
   "repository": {
     "type": "git",
