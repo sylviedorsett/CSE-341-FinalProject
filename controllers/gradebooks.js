@@ -14,22 +14,26 @@ const getAllGradebooks = async (req, res) => {
 
 // Function to GET one gradebook by ID from the database
 const getGradebook = async (req, res) => {
-  if (ObjectId.isValid(req.params.id)) {
-    const gradebookId = new ObjectId(req.params.id);
-    const response = await gradebookSchema.find({ _id: gradebookId });
-    if (response.length === 0) {
-      res.status(400).json('No ID by that number exists.');
-      return;
+  try {
+    if (ObjectId.isValid(req.params.id)) {
+      const gradebookId = new ObjectId(req.params.id);
+      const response = await gradebookSchema.find({ _id: gradebookId });
+      if (response.length === 0) {
+        res.status(400).json('No ID by that number exists.');
+        return;
+      }
+      res.setHeader('Content-Type', 'application/json');
+      res.status(200).json(response);
+    } else {
+      res.status(400).json('Invalid ID entered. Please try again.');
     }
-    res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(response);
-  } else {
-    res.status(400).json('Invalid ID entered. Please try again.');
+  } catch (error) {
+    res.status(500).json(res.error || 'An internal error occurred. Please try again later.');
   }
 };
 
 // Function to POST a new gradebook to the database
-const postGradebook = async (req, res) => {
+async function postGradebook(req, res) {
   try {
     const newGradebook = new gradebookSchema({
       firstName: req.body.firstName,
@@ -46,7 +50,7 @@ const postGradebook = async (req, res) => {
   } catch (error) {
     res.status(500).json(error || 'An error occurred. Please try again.');
   }
-};
+}
 
 // Function to update a gradebook in the database
 const putGradebook = async (req, res) => {
