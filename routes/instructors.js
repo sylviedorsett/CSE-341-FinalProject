@@ -7,10 +7,10 @@ const auth = require('../middleware/authenticate.js');
 router.get('/', getInstructorsController.getAllInstructors);
 router.get('/:id', getInstructorsController.getInstructor);
 router.post(
-  '/'
-  // auth.isAuthenticated,
-  // validate.newInstructor,
-  // getInstructorsController.postInstructor
+  '/',
+  auth.isAuthenticated,
+  validate.newInstructor,
+  getInstructorsController.postInstructor
 );
 router.put(
   '/:id',

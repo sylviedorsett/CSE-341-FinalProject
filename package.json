@@ -26,6 +26,7 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-openid-connect": "^2.12.1",
+    "jest-mock": "^29.5.0",
     "mime": "^3.0.0",
     "mongoose": "^7.0.2",
     "npm": "^9.5.1",

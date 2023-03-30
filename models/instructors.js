@@ -11,16 +11,3 @@ const instructorSchema = new mongoose.Schema({
 
 module.exports = mongoose.model('instructors', instructorSchema);
 
-/*    "securityDefinitions": {
-        "courses_auth": {
-          "type": "oauth2",
-          "authorizationUrl": "https://personalassignment7.onrender.com/authorize" ,
-          "flow": "implicit",
-          "x-google-issuer": "https://personalassignment7.onrender.com/"
-          "scopes": {
-            "read:courses": "Access to read the courses collection.",
-            "write:courses": "Modify courses collection"
-          }
-      }
-    }
-  }, */
