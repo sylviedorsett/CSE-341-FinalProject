@@ -1,13 +1,11 @@
 // const app = require('../server');
 // const supertest = require('supertest');
-const mongoose = require("mongoose");
-const request = require("supertest");
+const mongoose = require('mongoose');
+const request = require('supertest');
 const instructorSchema = require('../models/instructors');
-const app = require("../server");
+const app = require('../server');
 const { MongoMemoryServer } = require('mongodb-memory-server');
-require("dotenv").config();
-
-
+require('dotenv').config();
 
 async function connect() {
   // mongoServer = new MongoMemoryServer();
@@ -18,7 +16,7 @@ async function connect() {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
-      useFindAndModify: false,
+      useFindAndModify: false
     });
     console.log('MongoDB connected!');
   } catch (err) {
@@ -27,14 +25,13 @@ async function connect() {
   }
 }
 
-
 describe('Instructor API Endpoints', () => {
   beforeAll(async () => {
     // Set up test database
     await mongoose.connect(process.env.CONNECTIONSTRING, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
-      useCreateIndex: true,
+      useCreateIndex: true
     });
     // try {
     //   await mongoose.connect(process.env.CONNECTIONSTRING, {
@@ -68,7 +65,7 @@ describe('Instructor API Endpoints', () => {
   });
 
   let instructorId;
-  let instructorIdToDelete = "641905c0291ee9af6c791952"
+  let instructorIdToDelete = '641905c0291ee9af6c791952';
   describe('GET /instructors', () => {
     it('should get all instructors', async () => {
       const res = await request(app).get('/instructors');
@@ -76,7 +73,7 @@ describe('Instructor API Endpoints', () => {
       expect(res.status).toBe(200);
       // expect(res.body.length).(1);
 
-      instructorId = "642456d3432a97c8395556cb";
+      instructorId = '642456d3432a97c8395556cb';
     });
   });
 
@@ -169,7 +166,9 @@ describe('Instructor API Endpoints', () => {
         tenure: false,
         course: 'MATH101'
       };
-      const res = await request(app).put(`/instructors/64245728f1aecec9cd454371`).send(updatedInstructor);
+      const res = await request(app)
+        .put(`/instructors/64245728f1aecec9cd454371`)
+        .send(updatedInstructor);
 
       expect(res.status).toBe(200);
       expect(res.body.firstName).toEqual('John');
@@ -205,7 +204,9 @@ describe('Instructor API Endpoints', () => {
       });
 
       expect(res.status).toBe(400);
-      expect(res.body).toEqual('[Invalid ID](poe://www.poe.com/_api/key_phrase?phrase=Invalid%20ID&prompt=Tell%20me%20more%20about%20Invalid%20ID.) entered. Please try again.');
+      expect(res.body).toEqual(
+        '[Invalid ID](poe://www.poe.com/_api/key_phrase?phrase=Invalid%20ID&prompt=Tell%20me%20more%20about%20Invalid%20ID.) entered. Please try again.'
+      );
     });
   });
 
@@ -213,7 +214,7 @@ describe('Instructor API Endpoints', () => {
     it('should delete an instructor by id', async () => {
       const res = await request(app).delete(`/instructors/${instructorIdToDelete}`);
 
-      console.log(res.body)
+      console.log(res.body);
       expect(res.status).toBe(200);
       expect(res.body.acknowledged).toBe(true);
       expect(res.body.deletedCount).toEqual(1);

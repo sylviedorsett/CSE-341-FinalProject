@@ -379,9 +379,7 @@
       "get": {
         "tags": ["Gradebooks"],
         "summary": "This method retrieves all the gradebooks in a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -450,9 +448,7 @@
       "get": {
         "tags": ["Gradebooks"],
         "summary": "This method retreives one gradebook by its ID from a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -563,9 +559,7 @@
       "get": {
         "tags": ["Students"],
         "summary": "This method retrieves all the students in a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -625,9 +619,7 @@
       "get": {
         "tags": ["Students"],
         "summary": "This method retreives one student by its ID from a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
