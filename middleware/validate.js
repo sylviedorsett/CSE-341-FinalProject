@@ -72,10 +72,10 @@ const newGradebook = (req, res, next) => {
     lastName: 'required|string',
     teacher: 'required|string',
     class: 'required|string',
-    gpa: 'required|number',
+    gpa: 'required|integer',
     assignments: 'required|array',
-    missingAssignments: 'required|number',
-    absences: 'required|number'
+    missingAssignments: 'required|integer',
+    absences: 'required|integer'
   };
   validator(req.body, validateRule, {}, (err, status) => {
     if (!status) {
