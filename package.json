@@ -20,6 +20,7 @@
   "author": "Sylvie Dorsett",
   "license": "ISC",
   "dependencies": {
+    "@auth0/auth0-spa-js": "^2.0.4",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -29,6 +30,7 @@
     "jest-mock": "^29.5.0",
     "mime": "^3.0.0",
     "mongoose": "^7.0.2",
+    "morgan": "^1.10.0",
     "npm": "^9.5.1",
     "swagger-ui-express": "^4.6.2",
     "validatorjs": "^3.22.1"

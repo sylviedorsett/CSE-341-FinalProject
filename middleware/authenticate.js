@@ -6,8 +6,13 @@ const isAuthenticated = (req, res, next) => {
   next();
 };
 
-//Add method isTokenAuthenticated to check if token is authenticated.
+//Add method isTokenAuthenticated to check if token is authenticated:
+const isTokenAuthenticated = (req, res, next) => {
+  console.log('VALIDATING TOKEN!');
+  console.log(req.query.state);
+};
 
 module.exports = {
-  isAuthenticated
+  isAuthenticated,
+  isTokenAuthenticated
 };
