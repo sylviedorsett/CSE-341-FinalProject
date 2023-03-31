@@ -7,7 +7,7 @@ const newInstructor = (req, res, next) => {
     department: 'required|string',
     email: 'required|email',
     tenure: 'required|boolean',
-    course: 'required|array'
+    course: 'required|string'
   };
   validator(req.body, validateRule, {}, (err, status) => {
     if (!status) {
