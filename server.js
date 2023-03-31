@@ -30,8 +30,6 @@ const config = {
   }
 };
 
-let auth0Client = null;
-
 /* Middlewares */
 // Added morgan to show in console all the requests to the server
 server.use(morgan('dev'));

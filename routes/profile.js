@@ -4,10 +4,10 @@ const router = require('express').Router();
 router.get('/', (req, res) => {
   req.oidc.user ? res.render('profile', { user: req.oidc.user }) : res.redirect('/login');
 });
-
-router.post('/api-login', (req, res) => {
-  const username = req.body.username;
-  const pass = req.body.password;
-});
+/* We're not using this by noe */
+// router.post('/api-login', (req) => {
+//   const username = req.body.username;
+//   const pass = req.body.password;
+// });
 
 module.exports = router;

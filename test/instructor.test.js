@@ -1,16 +1,10 @@
-// const app = require('../server');
-// const supertest = require('supertest');
 const mongoose = require('mongoose');
 const request = require('supertest');
 const instructorSchema = require('../models/instructors');
 const app = require('../server');
-// const { MongoMemoryServer } = require('mongodb-memory-server');
 require('dotenv').config();
 
 async function connect() {
-  // mongoServer = new MongoMemoryServer();
-  // const mongoUri = process.env.CONNECTIONSTRING || await mongoServer.getUri();
-  // await mongoose.connect(mongoUri);
   try {
     await mongoose.connect(process.env.CONNECTIONSTRING, {
       useNewUrlParser: true,
@@ -33,29 +27,6 @@ describe('Instructor API Endpoints', () => {
       useNewUrlParser: true,
       useCreateIndex: true
     });
-    // try {
-    //   await mongoose.connect(process.env.CONNECTIONSTRING, {
-    //     useNewUrlParser: true,
-    //     useUnifiedTopology: true,
-    //     useCreateIndex: true,
-    //     useFindAndModify: false,
-    //   });
-    //   console.log('MongoDB connected!');
-    // } catch (err) {
-    //   console.error(err.message);
-    //   process.exit(1);
-    // }
-
-    // // Add test data
-    // const newInstructor = new instructorSchema({
-    //   firstName: 'John',
-    //   lastName: 'Doe',
-    //   department: 'Computer Science',
-    //   email: 'jo@gmail.com',
-    //   tenure: true,
-    //   course: 'CS101'
-    // });
-    // await newInstructor.save();
   });
 
   afterAll(async () => {
@@ -109,12 +80,12 @@ describe('Instructor API Endpoints', () => {
   describe('POST /instructors', () => {
     it('should create a new instructor', async () => {
       const newInstructor = {
-        "firstName": 'Lily',
-        "lastName": 'Potter',
-        "department": 'Pys-Ed',
-        "email": 'lpotter12@test.com',
-        "tenure": false,
-        "course": ['PYS-212']
+        firstName: 'Lily',
+        lastName: 'Potter',
+        department: 'Pys-Ed',
+        email: 'lpotter12@test.com',
+        tenure: false,
+        course: ['PYS-212']
       };
 
       const res = await request(app).post('/instructors').send(newInstructor);
@@ -130,29 +101,6 @@ describe('Instructor API Endpoints', () => {
       expect(res.body.course).toEqual(['PYS-212']);
     });
   });
-
-  // describe('POST /instructors', () => {
-  //   it('should create a new instructor', async () => {
-  //     const postInstructor = {
-  //       firstName: 'Jane',
-  //       lastName: 'Doe',
-  //       department: 'Mathematics',
-  //       email: 'morganfreeawdman@example.com',
-  //       tenure: false,
-  //       course: ['MATH101']
-  //     };
-
-  //     const res = await request(app).post('/instructors').send(postInstructor);
-
-  //     expect(res.status).toBe(201);
-  //     expect(res.body[0].firstName).toEqual('Jane');
-  //     expect(res.body[0].lastName).toEqual('Doe');
-  //     expect(res.body[0].department).toEqual('Mathematics');
-  //     expect(res.body[0].email).toEqual('janedodsadess@example.com');
-  //     expect(res.body[0].tenure).toEqual(false);
-  //     expect(res.body[0].course).toEqual(['MATH101']);
-  //   });
-  // });
 
   describe('PUT /instructors/:id', () => {
     it('should update an instructor by id', async () => {
