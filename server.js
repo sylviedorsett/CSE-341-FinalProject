@@ -5,6 +5,7 @@ const mongoose = require('./db/connect');
 const { auth } = require('express-openid-connect');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const morgan = require('morgan');
 dotenv.config();
 
 const express = require('express');
@@ -13,7 +14,7 @@ const express = require('express');
 const port = process.env.PORT || 3000;
 
 // set view engine
-server.set("views", "views")
+server.set('views', 'views');
 server.set('view engine', 'ejs');
 
 /* Auth Configurations */
@@ -23,20 +24,23 @@ const config = {
   secret: process.env.SECRET,
   baseURL: process.env.BASEURL,
   clientID: process.env.CLIENTID,
-  issuerBaseURL: process.env.ISSUERBASEURL
+  issuerBaseURL: process.env.ISSUERBASEURL,
+  authorizationParams: {
+    redirect_uri: 'http://localhost:3000/callback'
+  }
 };
 
 /* Middlewares */
+// Added morgan to show in console all the requests to the server
+server.use(morgan('dev'));
 server.use(auth(config));
 server.use(bodyParser.json());
 /* Allow all CORS */
 server.use(cors());
 server.use('/', require('./routes'));
 
-
 /* Setup Css  */
 server.use(express.static(__dirname + '/frontend'));
-
 
 /* Handle process errors */
 process.on('uncaughtException', (err, origin) => {
@@ -54,6 +58,5 @@ mongoose.initDb((err) => {
     console.log('Connected to database.');
   }
 });
-
 
 module.exports = server;

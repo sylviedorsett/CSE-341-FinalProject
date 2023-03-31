@@ -5,13 +5,13 @@
     "description": "An application to get, update, and delete College Course and Instructor information from a database.",
     "version": "1.0.0"
   },
-  "host": "college-api-cse341-final-project.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": ["http"],
   "securityDefinitions": {
     "oAuthSample": {
       "type": "oauth2",
-      "authorizationUrl": "https://college-api-cse341-final-project.onrender.com/login",
+      "authorizationUrl": "http://localhost:3000/login",
       "flow": "implicit",
       "scopes": {
         "read_docs": "read your database collections",
@@ -379,9 +379,7 @@
       "get": {
         "tags": ["Gradebooks"],
         "summary": "This method retrieves all the gradebooks in a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -450,9 +448,7 @@
       "get": {
         "tags": ["Gradebooks"],
         "summary": "This method retreives one gradebook by its ID from a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
@@ -563,9 +559,7 @@
       "get": {
         "tags": ["Students"],
         "summary": "This method retrieves all the students in a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [],
         "responses": {
           "200": {
@@ -625,9 +619,7 @@
       "get": {
         "tags": ["Students"],
         "summary": "This method retreives one student by its ID from a collection.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
