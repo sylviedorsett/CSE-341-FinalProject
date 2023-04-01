@@ -129,9 +129,9 @@ Content-Type: application/json
     "firstName": "Lily", 
     "lastName": "Potter", 
     "department": "Pys-Ed", 
-    "email": "lpalmer23232@test.com", 
+    "email": "lpalmer1@test.com", 
     "tenure": false, 
-    "course": ["PYS-212"] 
+    "courses": ["PYS-212"] 
 } 
 
 
@@ -299,7 +299,7 @@ Content-Type: application/json
 } 
 
 ### Local Host 
-POST https://localhost:3000/gradebooks/6419059a291ee9af6c791941
+PUT http://localhost:3000/gradebooks/6419059a291ee9af6c791941
 Content-Type: application/json 
 
 { 
@@ -337,7 +337,7 @@ Content-Type: application/json
 } 
 
 ### Local Host 
-POST https://localhost:3000/students/641905d6291ee9af6c79195d
+PUT http://localhost:3000/students/641905d6291ee9af6c79195d
 Content-Type: application/json 
 
 { 
@@ -366,7 +366,7 @@ DELETE http://localhost:3000/courses/6419057f291ee9af6c79193b
 DELETE https://college-api-cse341-final-project.onrender.com/instructors/641905c0291ee9af6c791954 
 
 ### Local Host 
-DELETE http://localhost:3000/instructors/641905c0291ee9af6c791954 
+DELETE http://localhost:3000/instructors/64285346fd3a2c45ca93bc41 
 
 
 

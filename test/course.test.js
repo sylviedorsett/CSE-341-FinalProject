@@ -1,8 +1,6 @@
 // Require dependencies
-const request = require('supertest');
-const app = require('../server');
+const request = require('./test.config')();
 const courseSchema = require('../models/courses');
-require('dotenv').config();
 
 describe('course API Endpoints', () => {
   let newCourseId; // define global variable to store new course id
@@ -20,7 +18,7 @@ describe('course API Endpoints', () => {
         endDate: '7/24/2023'
       };
 
-      const res = await request(app).post('/courses').send(newCourse);
+      const res = await request.post('/courses').send(newCourse);
 
       // Verify that the response status code is 201 (created)
       expect(res.status).toBe(201);
@@ -60,7 +58,7 @@ describe('course API Endpoints', () => {
         endDate: '7/24/2023'
       };
 
-      const res = await request(app).put(`/courses/${newCourseId}`).send(updatedCourse);
+      const res = await request.put(`/courses/${newCourseId}`).send(updatedCourse);
 
       // Verify that the response status code is 204 (OK)
       expect(res.status).toBe(204);
@@ -76,7 +74,7 @@ describe('course API Endpoints', () => {
 
   describe('GET ALL /courses', () => {
     it('Should get all courses', async () => {
-      const res = await request(app).get('/courses');
+      const res = await request.get('/courses');
       expect(res.status).toBe(200);
       expect(res.body).toBeInstanceOf(Array); // assert that the response is an array
       expect(res.body.length).toBeGreaterThan(0); // assert that the array has at least one element
@@ -86,7 +84,7 @@ describe('course API Endpoints', () => {
   /* GET ONE TESTS */
   describe('GET ONE /courses/:id', () => {
     it('Should get ONE course', async () => {
-      const res = await request(app).get('/courses/6419057f291ee9af6c79193b');
+      const res = await request.get('/courses/6419057f291ee9af6c79193b');
 
       expect(res.status).toBe(200);
       expect(res.body).toBeInstanceOf(Array); // assert that the response is an array
@@ -114,7 +112,7 @@ describe('course API Endpoints', () => {
   /* DELETE TESTS --------------------------------------*/
   describe('DELETE /courses/:id', () => {
     it('Should delete the newly created course', async () => {
-      const res = await request(app).delete(`/courses/${newCourseId}`);
+      const res = await request.delete(`/courses/${newCourseId}`);
 
       // Verify that the response status code is 200 (OK)
       expect(res.status).toBe(200);

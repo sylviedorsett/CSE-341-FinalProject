@@ -11,7 +11,11 @@
     "lint": "eslint .",
     "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config .prettierrc --ignore-path .gitignore",
     "swagger": "node ./swagger.js",
-    "test": "jest --verbose false --testTimeout=100000 --detectOpenHandles"
+    "course-test": "jest ./test/course --verbose false --testTimeout=100000 --detectOpenHandles --forceExit",
+    "gradebook-test": "jest ./test/gradebook --verbose false --testTimeout=100000 --detectOpenHandles --forceExit",
+    "student-test": "jest ./test/student --verbose false --testTimeout=100000 --detectOpenHandles --forceExit",
+    "instructor-test": "jest ./test/instructor --verbose false --testTimeout=100000 --detectOpenHandles --forceExit",
+    "test": "npm run course-test && npm run gradebook-test && npm run student-test && npm run instructor-test"
   },
   "repository": {
     "type": "git",

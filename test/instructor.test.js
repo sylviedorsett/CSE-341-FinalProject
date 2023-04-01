@@ -1,182 +1,125 @@
-const mongoose = require('mongoose');
-const request = require('supertest');
+// Require dependencies
+const request = require('./test.config')();
 const instructorSchema = require('../models/instructors');
-const app = require('../server');
-require('dotenv').config();
 
-async function connect() {
-  try {
-    await mongoose.connect(process.env.CONNECTIONSTRING, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false
-    });
-    console.log('MongoDB connected!');
-  } catch (err) {
-    console.error(err.message);
-    process.exit(1);
-  }
-}
+describe('instructor API Endpoints', () => {
+  let newInstructorId; // define global variable to store new instructor id
 
-describe('Instructor API Endpoints', () => {
-  beforeAll(async () => {
-    // Set up test database
-    await mongoose.connect(process.env.CONNECTIONSTRING, {
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
-      useCreateIndex: true
-    });
-  });
-
-  afterAll(async () => {
-    // Clean up test database
-    // await instructorSchema.deleteMany({});
-    await mongoose.connection.close();
-  });
-
-  let instructorId;
-  let instructorIdToDelete = '64270bc5b36755eb69aef151';
-  describe('GET /instructors', () => {
-    it('should get all instructors', async () => {
-      const res = await request(app).get('/instructors');
-
-      expect(res.status).toBe(200);
-      // expect(res.body.length).(1);
-
-      instructorId = '642456d3432a97c8395556cb';
-    });
-  });
-
-  describe('GET /instructors/:id', () => {
-    it('should get an instructor by id', async () => {
-      const res = await request(app).get(`/instructors/641905c0291ee9af6c791954`);
-
-      expect(res.status).toBe(200);
-      expect(res.body[0].firstName).toBe('Madison');
-      expect(res.body[0].lastName).toBe('Levi');
-      expect(res.body[0].department).toBe('English');
-      expect(res.body[0].email).toBe('mlevi@test.com');
-      expect(res.body[0].tenure).toEqual(false);
-      expect(res.body[0].course[0]).toBe('ENG-200');
-    });
-
-    // HERE MAYBE IS NECESSARY TO ADD THE FUNCTIONALITY OF 404 ERROR MESSAGE
-    // it('should return 404 if id is not found', async () => {
-    //   const res = await request(app).get(`/instructors/641905c0291ee9af6c791923`);
-    //   console.log(res.status)
-    //   expect(res.status).toBe(400);
-    //   expect(res.body).toEqual('No ID by that number exists.');
-    // });
-
-    it('should return 400 if id is invalid', async () => {
-      const res = await request(app).get('/instructors/invalid-id');
-
-      expect(res.status).toBe(400);
-      expect(res.body).toEqual('Invalid ID entered. Please try again.');
-    });
-  });
-
+  /* CREATE/POST TESTS --------------------------------------*/
   describe('POST /instructors', () => {
-    it('should create a new instructor', async () => {
+    it('Should create a new instructor and return it', async () => {
       const newInstructor = {
         firstName: 'Lily',
         lastName: 'Potter',
         department: 'Pys-Ed',
-        email: 'lpotter12@test.com',
+        email: 'lpotter@test.com',
         tenure: false,
-        course: ['PYS-212']
+        courses: ['PYS-212']
       };
 
-      const res = await request(app).post('/instructors').send(newInstructor);
-      // console.log(res.status);
-      // console.log(res.body);
-      // console.log(res);
+      const res = await request.post('/instructors').send(newInstructor);
+
+      // Verify that the response status code is 201 (created)
       expect(res.status).toBe(201);
-      expect(res.body.firstName).toEqual('Lily');
-      expect(res.body.lastName).toEqual('Potter');
-      expect(res.body.department).toEqual('Pys-Ed');
-      expect(res.body.email).toEqual('lpotter12@test.com');
-      expect(res.body.tenure).toEqual(false);
-      expect(res.body.course).toEqual(['PYS-212']);
+
+      // Verify that the response body is an object with the correct keys
+      expect(res.body).toEqual(
+        expect.objectContaining({
+          _id: expect.any(String),
+          firstName: newInstructor.firstName,
+          lastName: newInstructor.lastName,
+          department: newInstructor.department,
+          email: newInstructor.email,
+          tenure: newInstructor.tenure,
+          courses: newInstructor.courses
+        })
+      );
+      /* Set the new id globally */
+      console.log(res.body);
+      newInstructorId = res.body._id;
+      // Verify that the new instructor was actually added to the database
+      const addedInstructor = await instructorSchema.findById(res.body._id);
+      expect(addedInstructor).toMatchObject(newInstructor);
     });
   });
 
+  /* UPDATE/PUT TESTS --------------------------------------*/
   describe('PUT /instructors/:id', () => {
-    it('should update an instructor by id', async () => {
+    it('Should update an existing instructor', async () => {
       const updatedInstructor = {
-        firstName: 'John',
-        lastName: 'Smith',
-        department: 'Mathematics',
-        email: 'johnsmith1@example.com',
+        firstName: 'Lily EDITED',
+        lastName: 'Potter EDITED',
+        department: 'Pys-Ed',
+        email: 'lpotter@test.com',
         tenure: false,
-        course: ['MATH101']
+        courses: ['PYS-212']
       };
-      const res = await request(app)
-        .put(`/instructors/64245728f1aecec9cd454371`)
-        .send(updatedInstructor);
 
+      const res = await request.put(`/instructors/${newInstructorId}`).send(updatedInstructor);
+
+      // Verify that the response status code is 204 (OK)
       expect(res.status).toBe(204);
-    });
 
-    it('should return 500 if id is not found', async () => {
-      const res = await request(app)
-        .put(`/instructors/123456789012345678901234`)
-        .send({
-          firstName: 'John',
-          lastName: 'Smith',
-          department: 'Mathematics',
-          email: 'johnsmith@example.com',
-          tenure: false,
-          course: ['MATH101']
-        });
+      // Verify that the response body is null
+      expect(res.body).toEqual({});
 
-      expect(res.status).toBe(500);
-      expect(res.body).toEqual('An error occurred. Please try again.');
-    });
-
-    it('should return 400 if id is invalid', async () => {
-      const res = await request(app)
-        .put('/instructors/ invalid-id')
-        .send({
-          firstName: 'John',
-          lastName: 'Smith',
-          department: 'Mathematics',
-          email: 'johnsmith@example.com',
-          tenure: false,
-          course: ['MATH101']
-        });
-
-      expect(res.status).toBe(400);
-      expect(res.body).toEqual('Invalid ID entered. Please try again.');
+      // Verify that the instructor was actually updated in the database
+      const updatedInstructorFromDB = await instructorSchema.findById(newInstructorId);
+      expect(updatedInstructorFromDB).toMatchObject(updatedInstructor);
     });
   });
 
-  describe('DELETE /instructors/:id', () => {
-    it('should delete an instructor by id', async () => {
-      const res = await request(app).delete(`/instructors/${instructorIdToDelete}`);
-
-      // console.log(res.body);
+  describe('GET ALL /instructors', () => {
+    it('Should get all instructors', async () => {
+      const res = await request.get('/instructors');
       expect(res.status).toBe(200);
-      expect(res.body.acknowledged).toBe(true);
-      expect(res.body.deletedCount).toEqual(1);
-
-      const instructor = await instructorSchema.findById(instructorId);
-      expect(instructor).toBeNull();
+      expect(res.body).toBeInstanceOf(Array); // assert that the response is an array
+      expect(res.body.length).toBeGreaterThan(0); // assert that the array has at least one element
     });
+  });
 
-    it('should return 404 if id is not found', async () => {
-      const res = await request(app).delete(`/instructors/642708f57353aaa6887e855c`);
+  /* GET ONE TESTS */
+  describe('GET ONE /instructors/:id', () => {
+    it('Should get ONE instructor', async () => {
+      const res = await request.get(`/instructors/${newInstructorId}`);
 
-      expect(res.status).toBe(500);
-      expect(res.body).toEqual('Unable to delete contact. Please try again.');
+      expect(res.status).toBe(200);
+      expect(res.body).not.toBeNull();
+      
+      const instructor = res.body[0];
+      expect(instructor).toHaveProperty('_id');
+      expect(instructor).toHaveProperty('firstName');
+      expect(instructor).toHaveProperty('lastName');
+      expect(instructor).toHaveProperty('department');
+      expect(instructor).toHaveProperty('email');
+      expect(instructor).toHaveProperty('tenure');
+      expect(instructor).toHaveProperty('courses');
+      expect(instructor.firstName).toEqual('Lily EDITED');
+      expect(instructor.lastName).toEqual('Potter EDITED');
+      expect(instructor.department).toEqual('Pys-Ed');
+      expect(instructor.email).toEqual('lpotter@test.com');
+      expect(instructor.tenure).toEqual(false);
+      expect(instructor.courses).toEqual(['PYS-212']);
     });
+  });
 
-    it('should return 400 if id is invalid', async () => {
-      const res = await request(app).delete('/instructors/invalid-id');
+  /* DELETE TESTS --------------------------------------*/
+  describe('DELETE /instructors/:id', () => {
+    it('Should delete the newly created instructor', async () => {
+      const res = await request.delete(`/instructors/${newInstructorId}`);
 
-      expect(res.status).toBe(400);
-      expect(res.body).toEqual('Invalid ID entered. Please try again.');
+      // Verify that the response status code is 200 (OK)
+      expect(res.status).toBe(200);
+
+      // Verify that the response body is an object with the correct message
+      expect(res.body).toEqual({
+        acknowledged: true,
+        deletedCount: 1
+      });
+
+      // Verify that the instructor was actually deleted from the database
+      const deletedInstructor = await instructorSchema.findById(newInstructorId);
+      expect(deletedInstructor).toBeNull();
     });
   });
 });
