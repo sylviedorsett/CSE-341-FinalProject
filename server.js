@@ -24,10 +24,7 @@ const config = {
   secret: process.env.SECRET,
   baseURL: process.env.BASEURL,
   clientID: process.env.CLIENTID,
-  issuerBaseURL: process.env.ISSUERBASEURL,
-  authorizationParams: {
-    redirect_uri: 'http://localhost:3000/callback'
-  }
+  issuerBaseURL: process.env.ISSUERBASEURL
 };
 
 /* Middlewares */
@@ -53,7 +50,7 @@ mongoose.initDb((err) => {
     console.log('Something went wrong.', err);
   } else {
     server.listen(port, () => {
-      console.log(`Server running on port ${port}: http://localhost:3000/`);
+      console.log(`Server running on port ${port}`);
     });
     console.log('Connected to database.');
   }
