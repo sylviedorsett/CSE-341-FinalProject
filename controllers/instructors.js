@@ -37,7 +37,7 @@ const postInstructor = async (req, res) => {
       department: req.body.department,
       email: req.body.email,
       tenure: req.body.tenure,
-      course: req.body.course
+      courses: req.body.courses
     });
     await newInstructor.save();
     res.status(201).json(newInstructor);
@@ -57,7 +57,7 @@ const putInstructor = async (req, res) => {
       department: req.body.department,
       email: req.body.email,
       tenure: req.body.tenure,
-      course: req.body.course
+      courses: req.body.courses
     };
     const response = await instructorSchema.replaceOne({ _id: instructorId }, updatedData);
     if (response.modifiedCount > 0) {

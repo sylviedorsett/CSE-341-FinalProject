@@ -1,8 +1,6 @@
 // Require dependencies
-const request = require('supertest');
-const app = require('../server');
+const request = require('./test.config')();
 const gradebookSchema = require('../models/gradebooks');
-require('dotenv').config();
 
 describe('gradebook API Endpoints', () => {
   let newGradebookId; // define global variable to store new gradebook id
@@ -30,7 +28,7 @@ describe('gradebook API Endpoints', () => {
         absences: 0
       };
 
-      const res = await request(app).post('/gradebooks').send(newGradebook);
+      const res = await request.post('/gradebooks').send(newGradebook);
 
       // Verify that the response status code is 201 (created)
       expect(res.status).toBe(201);
@@ -81,7 +79,7 @@ describe('gradebook API Endpoints', () => {
         absences: 0
       };
 
-      const res = await request(app).put(`/gradebooks/${newGradebookId}`).send(updatedGradebook);
+      const res = await request.put(`/gradebooks/${newGradebookId}`).send(updatedGradebook);
 
       // Verify that the response status code is 204 (OK)
       expect(res.status).toBe(204);
@@ -97,7 +95,7 @@ describe('gradebook API Endpoints', () => {
 
   describe('GET ALL /gradebooks', () => {
     it('Should get all gradebooks', async () => {
-      const res = await request(app).get('/gradebooks');
+      const res = await request.get('/gradebooks');
       expect(res.status).toBe(200);
       expect(res.body).toBeInstanceOf(Array); // assert that the response is an array
       expect(res.body.length).toBeGreaterThan(0); // assert that the array has at least one element
@@ -107,7 +105,7 @@ describe('gradebook API Endpoints', () => {
   /* GET ONE TESTS */
   describe('GET ONE /gradebooks/:id', () => {
     it('Should get ONE gradebook', async () => {
-      const res = await request(app).get('/gradebooks/6419059a291ee9af6c791941');
+      const res = await request.get(`/gradebooks/${newGradebookId}`);
 
       expect(res.status).toBe(200);
       expect(res.body).toBeInstanceOf(Array); // assert that the response is an array
@@ -123,8 +121,8 @@ describe('gradebook API Endpoints', () => {
       expect(gradebook).toHaveProperty('missingAssignments');
       expect(gradebook).toHaveProperty('absences');
       // you can also check specific values of properties, for example:
-      expect(gradebook.firstName).toEqual('Mason');
-      expect(gradebook.lastName).toEqual('Abner');
+      expect(gradebook.firstName).toEqual('Santi EDITED');
+      expect(gradebook.lastName).toEqual('Pintus EDITED');
       expect(gradebook.teacher).toEqual('George Santos');
       expect(gradebook.class).toEqual('MATH-111');
       expect(gradebook.gpa).toEqual(2);
@@ -135,17 +133,18 @@ describe('gradebook API Endpoints', () => {
         'L02Quiz: 74',
         'L03: 0',
         'L03Quiz: 0',
-        'Module1Exam: 0'
+        'Module1Exam: 0',
+        'L04Quiz: 100'
       ]);
-      expect(gradebook.missingAssignments).toEqual(3);
-      expect(gradebook.absences).toEqual(2);
+      expect(gradebook.missingAssignments).toEqual(0);
+      expect(gradebook.absences).toEqual(0);
     });
   });
 
   /* DELETE TESTS --------------------------------------*/
   describe('DELETE /gradebooks/:id', () => {
     it('Should delete the newly created gradebook', async () => {
-      const res = await request(app).delete(`/gradebooks/${newGradebookId}`);
+      const res = await request.delete(`/gradebooks/${newGradebookId}`);
 
       // Verify that the response status code is 200 (OK)
       expect(res.status).toBe(200);

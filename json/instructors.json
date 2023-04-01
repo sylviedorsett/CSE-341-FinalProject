@@ -5,7 +5,7 @@
     "department": "Mathematics",
     "email": "gsantos@test.com",
     "tenure": true,
-    "course": "MATH-111, MATH-112"
+    "courses": "MATH-111, MATH-112"
   },
   "instructor1": {
     "firstName": "Leslie",
@@ -13,7 +13,7 @@
     "department": "Mathematics",
     "email": "lavery@test.com",
     "tenure": false,
-    "course": "MATH-120"
+    "courses": "MATH-120"
   },
   "instructor2": {
     "firstName": "Sarah",
@@ -21,7 +21,7 @@
     "department": "English",
     "email": "sthompson@test.com",
     "tenure": false,
-    "course": "ENG-100"
+    "courses": "ENG-100"
   },
   "instructor3": {
     "firstName": "Madison",
@@ -29,7 +29,7 @@
     "department": "English",
     "email": "mlevi@test.com",
     "tenure": true,
-    "course": "ENG-200"
+    "courses": "ENG-200"
   },
   "instructor4": {
     "firstName": "Esther",
@@ -37,7 +37,7 @@
     "department": "SCIENCE",
     "email": "epullman@test.com",
     "tenure": true,
-    "course": "SCE-121"
+    "courses": "SCE-121"
   },
   "instructor5": {
     "firstName": "Albert",
@@ -45,7 +45,7 @@
     "department": "Computer Science",
     "email": "aolsen@test.com",
     "tenure": false,
-    "course": "CSE-100"
+    "courses": "CSE-100"
   },
   "instructor6": {
     "firstName": "Paula",
@@ -53,7 +53,7 @@
     "department": "Pys-Ed",
     "email": "pstone@test.com",
     "tenure": false,
-    "course": "PYS-105"
+    "courses": "PYS-105"
   },
   "instructor7": {
     "firstName": "Ashton",
@@ -61,6 +61,6 @@
     "department": "Pys-Ed",
     "email": "aeldridge@test.com",
     "tenure": true,
-    "course": "PYS-131"
+    "courses": "PYS-131"
   }
 }

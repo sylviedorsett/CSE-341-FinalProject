@@ -1,8 +1,6 @@
 // Require dependencies
-const request = require('supertest');
-const app = require('../server');
+const request = require('./test.config')();
 const studentSchema = require('../models/students');
-require('dotenv').config();
 
 describe('student API Endpoints', () => {
   let newStudentId; // define global variable to store new student id
@@ -18,7 +16,7 @@ describe('student API Endpoints', () => {
         birthdate: '7/24/1988'
       };
 
-      const res = await request(app).post('/students').send(newStudent);
+      const res = await request.post('/students').send(newStudent);
 
       // Verify that the response status code is 201 (created)
       expect(res.status).toBe(201);
@@ -54,7 +52,7 @@ describe('student API Endpoints', () => {
         birthdate: '7/24/1988'
       };
 
-      const res = await request(app).put(`/students/${newStudentId}`).send(updatedStudent);
+      const res = await request.put(`/students/${newStudentId}`).send(updatedStudent);
 
       // Verify that the response status code is 204 (OK)
       expect(res.status).toBe(204);
@@ -71,7 +69,7 @@ describe('student API Endpoints', () => {
   /* GET ALL TESTS ----------------------------------------*/
   describe('GET ALL /students', () => {
     it('Should get all students', async () => {
-      const res = await request(app).get('/students');
+      const res = await request.get('/students');
       expect(res.status).toBe(200);
       expect(res.body).toBeInstanceOf(Array); // assert that the response is an array
       expect(res.body.length).toBeGreaterThan(0); // assert that the array has at least one element
@@ -81,7 +79,7 @@ describe('student API Endpoints', () => {
   /* GET ONE TESTS ----------------------------------------*/
   describe('GET ONE /students/:id', () => {
     it('Should get ONE student', async () => {
-      const res = await request(app).get('/students/641905d6291ee9af6c791965');
+      const res = await request.get('/students/641905d6291ee9af6c791965');
 
       expect(res.status).toBe(200);
       expect(res.body).toBeInstanceOf(Array); // assert that the response is an array
@@ -106,7 +104,7 @@ describe('student API Endpoints', () => {
   /* DELETE TESTS --------------------------------------*/
   describe('DELETE /students/:id', () => {
     it('Should delete the newly created student', async () => {
-      const res = await request(app).delete(`/students/${newStudentId}`);
+      const res = await request.delete(`/students/${newStudentId}`);
 
       // Verify that the response status code is 200 (OK)
       expect(res.status).toBe(200);
