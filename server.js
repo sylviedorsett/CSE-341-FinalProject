@@ -34,10 +34,10 @@ server.use(auth(config));
 server.use(bodyParser.json());
 /* Allow all CORS */
 server.use(cors());
-server.use('/', require('./routes'));
-
 /* Setup Css  */
 server.use(express.static(__dirname + '/frontend'));
+
+server.use('/', require('./routes'));
 
 /* Handle process errors */
 process.on('uncaughtException', (err, origin) => {
