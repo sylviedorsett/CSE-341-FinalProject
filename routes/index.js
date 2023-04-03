@@ -11,4 +11,9 @@ router.use('/gradebooks', require('./gradebooks'));
 router.use('/students', require('./students'));
 router.use('/profile', require('./profile'));
 
+// Return 404 for all other routes
+router.use((req, res) => {
+  res.status(404).send('Page not found');
+});
+
 module.exports = router;
