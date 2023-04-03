@@ -36,7 +36,6 @@ server.use(bodyParser.json());
 server.use(cors());
 /* Setup Css  */
 server.use(express.static(__dirname + '/frontend'));
-
 server.use('/', require('./routes'));
 
 /* Handle process errors */
