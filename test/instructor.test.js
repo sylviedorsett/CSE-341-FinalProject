@@ -35,7 +35,6 @@ describe('instructor API Endpoints', () => {
         })
       );
       /* Set the new id globally */
-      console.log(res.body);
       newInstructorId = res.body._id;
       // Verify that the new instructor was actually added to the database
       const addedInstructor = await instructorSchema.findById(res.body._id);
@@ -85,7 +84,7 @@ describe('instructor API Endpoints', () => {
 
       expect(res.status).toBe(200);
       expect(res.body).not.toBeNull();
-      
+
       const instructor = res.body[0];
       expect(instructor).toHaveProperty('_id');
       expect(instructor).toHaveProperty('firstName');
