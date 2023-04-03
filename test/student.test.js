@@ -79,7 +79,7 @@ describe('student API Endpoints', () => {
   /* GET ONE TESTS ----------------------------------------*/
   describe('GET ONE /students/:id', () => {
     it('Should get ONE student', async () => {
-      const res = await request.get('/students/641905d6291ee9af6c791965');
+      const res = await request.get(`/students/${newStudentId}`);
 
       expect(res.status).toBe(200);
       expect(res.body).toBeInstanceOf(Array); // assert that the response is an array
@@ -93,11 +93,11 @@ describe('student API Endpoints', () => {
       expect(student).toHaveProperty('birthdate');
 
       // you can also check specific values of properties, for example:
-      expect(student.firstName).toEqual('Andrew');
-      expect(student.lastName).toEqual('McFadden');
-      expect(student.major).toEqual('Computer Science');
-      expect(student.email).toEqual('amcfadden@test.com');
-      expect(student.birthdate).toEqual('09/01/1998');
+      expect(student.firstName).toEqual('Harry');
+      expect(student.lastName).toEqual('Howsen');
+      expect(student.major).toEqual('Gymnastics');
+      expect(student.email).toEqual('hhsushi@test.com');
+      expect(student.birthdate).toEqual('7/24/1988');
     });
   });
 
