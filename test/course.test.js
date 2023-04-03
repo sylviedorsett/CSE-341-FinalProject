@@ -84,7 +84,7 @@ describe('course API Endpoints', () => {
   /* GET ONE TESTS */
   describe('GET ONE /courses/:id', () => {
     it('Should get ONE course', async () => {
-      const res = await request.get('/courses/6419057f291ee9af6c79193b');
+      const res = await request.get(`/courses/${newCourseId}`);
 
       expect(res.status).toBe(200);
       expect(res.body).toBeInstanceOf(Array); // assert that the response is an array
@@ -99,11 +99,11 @@ describe('course API Endpoints', () => {
       expect(course).toHaveProperty('startDate');
       expect(course).toHaveProperty('endDate');
       // you can also check specific values of properties, for example:
-      expect(course.courseTitle).toEqual('Biology');
-      expect(course.courseId).toEqual('SCE-115');
-      expect(course.instructor).toEqual('Esther Pullman');
+      expect(course.courseTitle).toEqual('Art History - EDITED');
+      expect(course.courseId).toEqual('Art-101 - EDITED');
+      expect(course.instructor).toEqual('Claire Movelo');
       expect(course.classMax).toEqual(50);
-      expect(course.currentEnrollment).toEqual(19);
+      expect(course.currentEnrollment).toEqual(43);
       expect(course.startDate).toEqual('04/17/2023');
       expect(course.endDate).toEqual('7/24/2023');
     });
